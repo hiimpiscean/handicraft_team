@@ -13,7 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//////////Handicraf/////////////////
+
 Route::get('/', function () {
     return view('welcome');
 });
-//////////Handicraf/////////////////
+Route::get('blade', function () {
+    return view('viewEngine');
+});
+
+Route::group(['prefix' => 'pie'], function (){
+    Route::get('', function () {
+        return view('pie.index');
+    })->name('pie.index');
+
+    Route::get('order', function () {
+        return view('pie.order');
+    })->name('pie.order');
+
+    Route::get('allpies', function () {
+        return view('pie.allpies');
+    })->name('pie.allpies');
+
+    Route::get('applepie', function () {
+        return view('pie.applepie');
+    })->name('pie.applepie');
+});
