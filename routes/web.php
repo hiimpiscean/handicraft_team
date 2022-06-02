@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,4 +16,44 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//////////Handicraf/////////////////
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('', [
+        'uses' => 'AdminController@index',
+        'as' => 'admin.index'
+    ]);
+
+    Route::get('show/{id}',[
+        'uses' => 'AdminController@show',
+        'as' => 'admin.show'
+    ]);
+
+    Route::get('create',[
+        'uses' => 'AdminController@create',
+        'as' => 'admin.create'
+    ]);
+
+    Route::post('create',[
+        'uses' => 'AdminController@store',
+        'as' => 'admin.store'
+    ]);
+
+    Route::get('update/{id}',[
+        'uses' => 'AdminController@edit',
+        'as' => 'admin.edit'
+    ]);
+
+    Route::post('update/{id}',[
+        'uses' => 'AdminController@update',
+        'as' => 'admin.update'
+    ]);
+
+    Route::get('delete/{id}', [
+        'uses' => 'AdminController@confirm',
+        'as' => 'admin.confirm'
+    ]);
+
+    Route::post('delete/{id}',[
+        'uses' => 'AdminController@destroy',
+        'as' => 'admin.destroy'
+    ]);
+});
