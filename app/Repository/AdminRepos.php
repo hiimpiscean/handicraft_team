@@ -37,10 +37,10 @@ class AdminRepos
 
     public static function update($admin){
         $sql = 'update category ';
-        $sql .= 'set name_cate = ? ';
+        $sql .= 'set name_cate = ?, image_cate = ? ';
         $sql .= 'where id_cate = ? ';
 
-        DB::update($sql, [$admin->name_cate, $admin->id_cate]);
+        DB::update($sql, [$admin->name_cate, $admin->image_cate, $admin->id_cate]);
 
     }
 

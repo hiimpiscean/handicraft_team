@@ -46,7 +46,7 @@ class AdminController extends Controller
    //     $this->formValidate($request)->validate(); //shortcut
 
         $admin = (object)[
-            'id_cate' => $request->input('id_cate'),
+            'id_cate' => $request->input('id'),
             'name_cate' => $request->input('name_cate'),
             'image_cate' => $request->input('image_cate'),
         ];
@@ -70,16 +70,17 @@ class AdminController extends Controller
 
     public function update(Request $request, $id)
     {
-        if ($id != $request->input('id_cate')) {
+        if ($id != $request->input('id')) {
             //id in query string must match id in hidden input
             return redirect()->action('AdminController@index');
         }
 
-        $this->formValidate($request)->validate(); //shortcut
+   //     $this->formValidate($request)->validate(); //shortcut
 
         $admin = (object)[
-            'id_cate' => $request->input('id_cate'),
+            'id_cate' => $request->input('id'),
             'name_cate' => $request->input('name_cate'),
+            'image_cate' => $request->input('image_cate'),
         ];
         AdminRepos::update($admin);
 
