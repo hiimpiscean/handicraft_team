@@ -7,7 +7,7 @@
 
     @include('partials.errors')
 
-    <form action="{{route('book.update', ['id_cate' => old('id_cate')?? $book->id_cate])}}" method="post">
+    <form action="{{route('admin.update', ['id' => old('id_cate')?? $admin->id_cate])}}" method="post">
       @csrf
       @include('admin.cateFields')
 
