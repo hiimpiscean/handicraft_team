@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container">
 
-        <a class="navbar-brand" href="{{route('admin.index')}}">Handicraft Shop</a>
+        <a class="navbar-brand" href="{{route('category.index')}}">Handicraft Shop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,14 +10,14 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">admins </a>
+                       aria-haspopup="true" aria-expanded="false">Categories </a>
                     <div class="dropdown-menu" aria-labelledby="adminDropdown">
                         <a class="dropdown-item"
-                           href="{{route('admin.index')}}"
+                           href="{{route('category.index')}}"
                         >View All</a>
                         <a class="dropdown-item"
-                           href="{{route('admin.create')}}"
-                        >New admin</a>
+                           href="{{route('category.create')}}"
+                        >New category</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item"
                             {{--               href="{{route('admin.reset')}}"--}}

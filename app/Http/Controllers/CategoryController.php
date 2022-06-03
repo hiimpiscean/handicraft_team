@@ -2,28 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Repository\AdminRepos;
+use App\Repository\CategoryRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class AdminController extends Controller
+class CategoryController extends Controller
 {
     public function index()
     {
-        $admins = AdminRepos::getAllAdmins();
-        return view('admin.category',
+        $categories = CategoryRepos::getAllCategories();
+        return view('category.index',
             [
-                'admins' => $admins,
+                'categories' => $categories,
             ]);
     }
 
     public function show($id)
     {
 
-        $admin = AdminRepos::getAdminById($id); //this is always an array of objects
-        return view('admin.showCate',
+        $category = CategoryRepos::getCategoryById($id); //this is always an array of objects
+        return view('category.show',
             [
-                'admin' => $admin[0] //get the first element
+                'category' => $category[0] //get the first element
             ]
         );
     }
@@ -32,8 +32,8 @@ class AdminController extends Controller
     {
 
         return view(
-            'admin.newCate',
-            ["admin" => (object)[
+            'category.new',
+            ["category" => (object)[
                 'id_cate' => '',
                 'name_cate' => '',
                 'image_cate' => ''
@@ -44,56 +44,68 @@ class AdminController extends Controller
     public function store(Request $request)
     {
    //     $this->formValidate($request)->validate(); //shortcut
+        if ($request->hasFile('file')) {
 
-        $admin = (object)[
+            $request->validate([
+                'image' => 'mimes:jpg,jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
+            ]);
+
+            // Save the file locally in the storage/public/ folder under a new folder named /product
+
+        }
+        $request->file->store('category', 'public');
+        $category = (object)[
             'id_cate' => $request->input('id'),
             'name_cate' => $request->input('name_cate'),
-            'image_cate' => $request->input('image_cate'),
+            "image_cate" => $request->file->hashName(),
         ];
+        // ensure the request has a file before we attempt anything else.
 
-        $newId = AdminRepos::insert($admin);
+            // Store the record, using the new file hashname which will be it's new filename identity.
+
+        $newId = CategoryRepos::insert($category);
 
         return redirect()
-            ->action('AdminController@index')
-            ->with('msg', 'New admin with id: '.$newId.' has been inserted');
+            ->action('CategoryController@index')
+            ->with('msg', 'New category with id: '.$newId.' has been inserted');
     }
 
     public function edit($id)
     {
-        $admin = AdminRepos::getAdminById($id); //this is always an array
+        $category = CategoryRepos::getCategoryById($id); //this is always an array
 
 
         return view(
-            'admin.updateCate',
-            ["admin" => $admin[0]]);
+            'category.update',
+            ["category" => $category[0]]);
     }
 
     public function update(Request $request, $id)
     {
         if ($id != $request->input('id')) {
             //id in query string must match id in hidden input
-            return redirect()->action('AdminController@index');
+            return redirect()->action('CategoryController@index');
         }
 
    //     $this->formValidate($request)->validate(); //shortcut
 
-        $admin = (object)[
+        $category = (object)[
             'id_cate' => $request->input('id'),
             'name_cate' => $request->input('name_cate'),
             'image_cate' => $request->input('image_cate'),
         ];
-        AdminRepos::update($admin);
+        CategoryRepos::update($category);
 
-        return redirect()->action('AdminController@index')
+        return redirect()->action('CategoryController@index')
             ->with('msg', 'Update Successfully');;
     }
 
     public function confirm($id){
-        $admin = AdminRepos::getAdminById($id); //this is always an array
+        $category = CategoryRepos::getCategoryById($id); //this is always an array
 
-        return view('admin.confirmCate',
+        return view('category.confirm',
             [
-                'admin' => $admin[0]
+                'category' => $category[0]
             ]
         );
     }
@@ -102,13 +114,13 @@ class AdminController extends Controller
     {
         if ($request->input('id_cate') != $id) {
             //id in query string must match id in hidden input
-            return redirect()->action('AdminController@index');
+            return redirect()->action('CategoryController@index');
         }
 
-        AdminRepos::delete($id);
+        CategoryRepos::delete($id);
 
 
-        return redirect()->action('AdminController@index')
+        return redirect()->action('CategoryController@index')
             ->with('msg', 'Delete Successfully');
     }
 

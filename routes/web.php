@@ -16,44 +16,44 @@ use App\Http\Controllers;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'category'], function () {
     Route::get('', [
-        'uses' => 'AdminController@index',
-        'as' => 'admin.index'
+        'uses' => 'CategoryController@index',
+        'as' => 'category.index'
     ]);
 
     Route::get('show/{id}',[
-        'uses' => 'AdminController@show',
-        'as' => 'admin.show'
+        'uses' => 'CategoryController@show',
+        'as' => 'category.show'
     ]);
 
     Route::get('create',[
-        'uses' => 'AdminController@create',
-        'as' => 'admin.create'
+        'uses' => 'CategoryController@create',
+        'as' => 'category.create'
     ]);
 
     Route::post('create',[
-        'uses' => 'AdminController@store',
-        'as' => 'admin.store'
+        'uses' => 'CategoryController@store',
+        'as' => 'category.store'
     ]);
 
     Route::get('update/{id}',[
-        'uses' => 'AdminController@edit',
-        'as' => 'admin.edit'
+        'uses' => 'CategoryController@edit',
+        'as' => 'category.edit'
     ]);
 
     Route::post('update/{id}',[
-        'uses' => 'AdminController@update',
-        'as' => 'admin.update'
+        'uses' => 'CategoryController@update',
+        'as' => 'category.update'
     ]);
 
     Route::get('delete/{id}', [
-        'uses' => 'AdminController@confirm',
-        'as' => 'admin.confirm'
+        'uses' => 'CategoryController@confirm',
+        'as' => 'category.confirm'
     ]);
 
     Route::post('delete/{id}',[
-        'uses' => 'AdminController@destroy',
-        'as' => 'admin.destroy'
+        'uses' => 'CategoryController@destroy',
+        'as' => 'category.destroy'
     ]);
 });
