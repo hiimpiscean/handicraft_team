@@ -51,7 +51,6 @@ class CategoryController extends Controller
             ]);
 
             // Save the file locally in the storage/public/ folder under a new folder named /product
-
         }
         $request->file->store('category', 'public');
         $category = (object)[
@@ -87,12 +86,21 @@ class CategoryController extends Controller
             return redirect()->action('CategoryController@index');
         }
 
-   //     $this->formValidate($request)->validate(); //shortcut
 
+   //     $this->formValidate($request)->validate(); //shortcut
+        if ($request->hasFile('file')) {
+
+            $request->validate([
+                'image' => 'mimes:jpg,jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
+            ]);
+
+            // Save the file locally in the storage/public/ folder under a new folder named /product
+        }
+        $request->file->store('category', 'public');
         $category = (object)[
             'id_cate' => $request->input('id'),
             'name_cate' => $request->input('name_cate'),
-            'image_cate' => $request->input('image_cate'),
+            "image_cate" => $request->file->hashName(),
         ];
         CategoryRepos::update($category);
 
