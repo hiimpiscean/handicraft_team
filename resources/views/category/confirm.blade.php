@@ -5,7 +5,7 @@
         <h1 class="display-4">Are you sure you want to delete?</h1>
         @include('category.cateDetails')
 
-        <form action="{{route('category.destroy', ['id_cate' =>$category->id_cate])}}" method="post">
+        <form action="{{route('category.destroy', ['id' =>$category->id_cate])}}" method="post">
             @csrf
             <input type="hidden" name="id" value="{{$category->id_cate}}">
             <button type="submit" class="btn btn-danger">Delete</button>

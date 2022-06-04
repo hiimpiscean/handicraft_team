@@ -21,7 +21,7 @@
 
                     <td>{{$c->name_cate}}</td>
                     <td>
-                        <img src="{{ asset('/category/'.$c->image_cate) }}" height="100" width="100"></td>
+                        <img src="{{ asset('/storage/category/'.$c->image_cate) }}" height="200" width="150"></td>
                     <td><a type="button" class="btn btn-primary btn-sm"
                            href="{{route('category.show', ['id' => $c->id_cate])}}"
                         >Details</a>
