@@ -1,0 +1,58 @@
+create database if not exists `asm`;
+
+USE `asm`;
+
+CREATE TABLE if NOT EXISTS `category`(
+	`id_cate` int PRIMARY KEY AUTO_INCREMENT,
+	`name_cate` VARCHAR(50) NOT NULL
+	
+);
+
+INSERT INTO `category` (`name`)
+VALUES 
+	('Ceramic'),
+	('Wood'),
+	('Metal');
+
+
+
+CREATE TABLE IF NOT EXISTS `product` (
+  `id_p` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name_p` varchar(255) NOT NULL,
+  `price_p` varchar(50) NOT NULL,
+  `size_p` varchar(50) NOT NULL,
+  `description_p` varchar(500),
+  `categoryId` int, 
+  FOREIGN KEY (`categoryId`) REFERENCES `category`(`id_cate`) -- ON DELETE cascade
+);
+
+INSERT INTO `books` (`name_p`, `price_p`, `size_p`, `description_p`, `categoryId`)
+VALUES 
+	('Wooden house', '50', 'M', 'A handmade house will be a meaningful birthday gift', 3),
+    ('Wooden dog', '50', 'M', 'A meaningful birthday gift', 1),
+    ('Ceramic jars', '50', 'M', 'Flower vase decoration', 3),
+    ('Vase', '50', 'M', 'A handmade house will be a meaningful birthday gift', 2),
+    ('Copper vase', '50', 'M', 'Valuable decorations for partners, housewarming, superiors or collectors.', 2),
+    ('Bronze statue', '50', 'M', 'Alloy model', 1);
+	
+
+	CREATE TABLE IF NOT EXISTS `admin` (
+  `username` varchar(255) NOT NULL PRIMARY KEY ,
+  `fullName_a` varchar(255) NOT NULL,
+  `phone_a` varchar(250) NOT NULL,
+  `email_a` varchar(250) NOT NULL,
+  `password` varchar(500) NOT NULL
+ 
+  
+);
+
+CREATE TABLE IF NOT EXISTS `customer` (
+    `id_c` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `fullName_c` varchar(255) NOT NULL,
+  `phone_c` varchar(250) NOT NULL,
+  `email_c` varchar(250) NOT NULL,
+  `address_c` varchar(500) NOT NULL
+
+  
+);
+	
