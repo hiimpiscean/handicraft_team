@@ -9,6 +9,7 @@
 
 <div class="form-group">
   <label for="image_cate" class="font-weight-bold">Image</label>
-  <input type="file" class="form-control" id="file" name="file" min="0" value="{{old('image_cate')?? $category->image_cate}}">
+  <input type="file" accept="image/*" class="form-control" id="file" name="file" min="0" value="{{old('image_cate')?? $category->image_cate}}">
+    <img id='tempimage' src="#" style='max-width:300px; max-height:300px'>
 </div>
 

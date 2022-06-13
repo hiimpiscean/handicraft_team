@@ -56,7 +56,7 @@ class CategoryController extends Controller
         $category = (object)[
             'id_cate' => $request->input('id'),
             'name_cate' => $request->input('name_cate'),
-            "image_cate" => $request->file->hashName(),
+            "image_cate" => $request->file->Name(),
         ];
         // ensure the request has a file before we attempt anything else.
 
