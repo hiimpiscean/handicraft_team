@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//////////Handicraf/////////////////
+//////////pie/////////////////
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,4 +39,51 @@ Route::group(['prefix' => 'pie'], function (){
     Route::get('applepie', function () {
         return view('pie.applepie');
     })->name('pie.applepie');
+});
+
+
+
+
+
+////////////////////////////////Handi///////////////////////////
+ Route::group(['prefix' => 'handireposs'], function () {
+    Route::get('', [
+        'uses' => 'HandiControllerRepos@index',
+        'as' => 'handi.index'
+    ]);
+
+    Route::get('show/{id}',[
+        'uses' => 'HandiControllerRepos@show',
+        'as' => 'handi.show'
+    ]);
+
+    Route::get('create',[
+        'uses' => 'HandiControllerRepos@create',
+        'as' => 'handi.create'
+    ]);
+
+    Route::post('create',[
+        'uses' => 'HandiControllerRepos@store',
+        'as' => 'handi.store'
+    ]);
+
+    Route::get('update/{id}',[
+        'uses' => 'HandiControllerRepos@edit',
+        'as' => 'handi.edit'
+    ]);
+
+    Route::post('update/{id}',[
+        'uses' => 'HandiControllerRepos@update',
+        'as' => 'handi.update'
+    ]);
+
+    Route::get('delete/{id}', [
+        'uses' => 'HandiControllerRepos@confirm',
+        'as' => 'handi.confirm'
+    ]);
+
+    Route::post('delete/{id}',[
+        'uses' => 'HandiControllerRepos@destroy',
+        'as' => 'handi.destroy'
+    ]);
 });
