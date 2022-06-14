@@ -1,3 +1,17 @@
+<style>
+
+  .boy{
+    margin-right: 100px;
+    margin-left: 105px;
+    margin-top: 35px;
+    /*border: solid 1px red;*/
+
+    width: 75%;
+
+  }
+</style>
+
+<div class="boy">
 <input type="hidden" name="id_a" value="{{old('id_a')?? $admin->id_a}}">
 
 <div class="form-group">
@@ -10,6 +24,7 @@
   <label for="fullName_a" class="font-weight-bold">Full Name</label>
   <input type="text" class="form-control" id="fullName_a" name="fullName_a" value="{{old('fullName_a')?? $admin->fullName_a}}">
 </div>
+
 
 <div class="form-group">
   <label for="phone_a" class="font-weight-bold">Phone</label>
@@ -26,3 +41,4 @@
   <input type="password" class="form-control" id="password" name="password" value="{{old('password')?? $admin->password}}">
 </div>
 
+</div>

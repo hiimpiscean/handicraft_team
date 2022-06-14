@@ -67,6 +67,5 @@ class adminRepos
 
 
 
-    //////////password//////////
-//    $hashed_password = password_hash($)
+
 }

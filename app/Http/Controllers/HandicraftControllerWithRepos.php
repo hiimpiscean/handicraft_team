@@ -12,6 +12,9 @@ class HandicraftControllerWithRepos extends Controller
     // phương thức with để truyền dữ liệu cho view
     // trong thu mục Repository sẽ chứa tất cả các thư mục Repos
     // ta ko lấy từ session nữa mà ta lấy ở database
+
+
+    /////////////////////////////////
     public function index()
     {
 

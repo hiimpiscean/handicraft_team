@@ -2,11 +2,20 @@
 
 @section('main')
 
+  <style>
 
+    .han{
+      margin-top: 50px;
+      /*margin-bottom: 5px;*/
+    }
+    .cancel{
+      margin-left: 800px;
+    }
+  </style>
   <div class="container">
-    <h1 class="display-4">Handicraft Details</h1>
+    <h1 class="display-4 text-center han">Handicraft Details</h1>
     @include('handicraftWithRepos.handicraftDetails')
 
-    <a type="button" href="{{route('handicraft.index')}}" class="btn btn-info">&lt;&lt;&nbsp;Index</a>
+    <a type="button" href="{{route('handicraft.index')}}" class="btn btn-info cancel">&lt;&lt;&nbsp;Back</a>
   </div>
 @endsection

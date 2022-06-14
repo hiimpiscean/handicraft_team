@@ -1,3 +1,17 @@
+<style>
+
+  .boy{
+    margin-right: 100px;
+    margin-left: 105px;
+    margin-top: 35px;
+    /*border: solid 1px red;*/
+
+    width: 75%;
+
+  }
+</style>
+
+<div class="boy">
 <input type="hidden" name="id_cate" value="{{old('id_cate')?? $category->id_cate}}">
 <div class="form-group">
   <label for="name_cate" class="font-weight-bold">Name</label>
@@ -10,7 +24,7 @@
   <label for="image_p" class="font-weight-bold">Image</label>
 
 
-  <img class="col-sm-9 " src="{{asset('images/category/'. $category->image_cate)}}" width="200" height="350" alt="" >
+  <img class="col-sm-9 " src="{{asset('images/category/'. $category->image_cate)}}" width="150" height="450" alt="" >
 
 
 </div>
@@ -21,3 +35,4 @@
 
 </div>
 
+</div>

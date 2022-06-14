@@ -82,4 +82,9 @@ class ProductRepos
         DB::delete($sql, [$id_p]);
 
     }
+
+
+
+    //check SELECT count(*) FROM `product` p WHERE p.category_id = 1
+//    if ($count > 0) showErrorMessage(...)
 }

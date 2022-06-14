@@ -35,6 +35,7 @@ class CustomerControllerWithRepos extends Controller
             ["customer" => (object)[
                 'id_c' => '',
                 'fullName_c' => '',
+                'dob' => '',
                 'phone_c' => '',
                 'email_c' => '',
                 'address_c' => ''
@@ -50,6 +51,7 @@ class CustomerControllerWithRepos extends Controller
 
         $customer = (object)[
             'fullName_c' => $request->input('fullName_c'),
+            'dob' => $request->input('dob'),
             'phone_c' => $request->input('phone_c'),
             'email_c' => $request->input('email_c'),
             'address_c' => $request->input('address_c'),
@@ -85,6 +87,7 @@ class CustomerControllerWithRepos extends Controller
         $customer = (object)[
             'id_c' => $request->input('id_c'),
             'fullName_c' => $request->input('fullName_c'),
+            'dob' => $request->input('dob'),
             'phone_c' => $request->input('phone_c'),
             'email_c' => $request->input('email_c'),
             'address_c' => $request->input('address_c'),
@@ -126,13 +129,14 @@ class CustomerControllerWithRepos extends Controller
             $request->all(),
             [
                 'fullName_c' => ['required','min:5'],
+                'dob' => ['required','date_format:"Y-m-d"'],
                 'phone_c' => ['required','starts_with:0','digits:11'],
                 'email_c' => ['required','email'],
 
             ],
             [
                 'fullName_c.required'=>'Please enter Full name',
-                'fullName_c.min'=>'Enter up to 5 characters',
+                'fullName_c.min'=>'Enter Full Name up to 5 characters',
                 'phone_c.required'=>'Please enter Phone',
                 'phone_c.starts_with'=>'Enter a phone number starting with 0',
                 'phone_c.digits'=>'Please enter exactly 11 numbers',

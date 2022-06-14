@@ -1,5 +1,18 @@
 {{--Create Handicraft--}}
 
+<style>
+
+  .boy{
+    margin-right: 100px;
+    margin-left: 105px;
+    margin-top: 35px;
+    /*border: solid 1px red;*/
+
+    width: 75%;
+
+  }
+</style>
+<div class="boy">
 <input type="hidden" name="id_p" value="{{old('id_p')?? $product->id_p}}">
 
 
@@ -55,4 +68,5 @@
 
     @endforeach
   </select>
+</div>
 </div>

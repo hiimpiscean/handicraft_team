@@ -1,8 +1,9 @@
 body {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background-image: url('../images/pattern.png');
+    background-image: url('../images/cusHan/bak.png');
     background-repeat: repeat;
+    background-color: #faede5;
 }
 
 .jumbotron-detail-apple-pie {
@@ -38,7 +39,7 @@ body {
 
 .welcome-carousel-image1 {
     box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
-    background-image: url('../images/handicraf/donglua.jpg');
+    background-image: url('../images/handicraf/binhhoa.PNG');
 }
 
 .welcome-carousel-image2 {
@@ -48,7 +49,7 @@ body {
 
 .welcome-carousel-image3 {
     box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
-    background-image: url('../images/handicraf/binhhoa.PNG');
+    background-image: url('../images/cusHan/lang.jpg');
 }
 
 .bg-primary-custom{

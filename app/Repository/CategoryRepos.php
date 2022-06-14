@@ -26,4 +26,14 @@ class CategoryRepos
 
         return DB::select($sql, [$productId]);
     }
+//    public static function getCategoryByProductId($productId){
+//        $sql = 'select count(*) ';
+//        $sql .= 'from category as c ';
+//        $sql .= 'join product as p on c.id_cate = p.categoryId ';
+////        join : nối giữa hai bảng
+//        $sql .= 'where p.id_p = ?';
+//
+//        return DB::select($sql, [$productId]);
+//    }
+//    SELECT count(*) FROM `product` p WHERE p.category_id
 }

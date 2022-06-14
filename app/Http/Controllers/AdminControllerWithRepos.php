@@ -167,6 +167,7 @@ class AdminControllerWithRepos extends Controller
             [
                 'username' => ['required'],
                 'fullName_a' => ['required','min:5'],
+//                'dob' => ['required','date_format:"Y-m-d"'],
                 'phone_a' => ['required','starts_with:0','digits:11'],
                 'email_a' => ['required','email'],
                 'password' => ['required'],

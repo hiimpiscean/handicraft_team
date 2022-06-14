@@ -11,19 +11,15 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="bookDropdown" role="button" data-toggle="dropdown"
+          <a class="nav-link dropdown-toggle" href="#" id="hanDropdown" role="button" data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">Handicraft </a>
-          <div class="dropdown-menu" aria-labelledby="bookDropdown">
+          <div class="dropdown-menu" aria-labelledby="hanDropdown">
             <a class="dropdown-item"
                href="{{route('handicraft.index')}}"
             >View All</a>
             <a class="dropdown-item"
                href="{{route('handicraft.create')}}"
             >New Handicraft</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item"
-              {{--               href="{{route('book.reset')}}"--}}
-            >Reset data</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -54,9 +50,10 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="formatDropdown">
             <a class="dropdown-item" href="{{route('customer.index')}}">View All</a>
-            <a class="dropdown-item" href="{{route('customer.create')}}">New Customer</a>
           </div>
         </li>
+
+
       </ul>
     </div>
   </div>

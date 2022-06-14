@@ -65,6 +65,11 @@ class BookControllerWithRepos extends Controller
     public function store(Request $request)
         //vì là form trống nên ta chỉ lấy toàn bộ dữ liệu từ form thông qua request
     {
+//   C1:     $validation = $this->formValidate($request);
+//        if ($validation->fails()) {
+//            return redirect()->back()->withErrors($validation)->withInput();
+//        }
+// C2:
         $this->formValidate($request)->validate(); //shortcut
 
         $book = (object)[
@@ -82,9 +87,6 @@ class BookControllerWithRepos extends Controller
             ->with('msg', 'New book with id: '.$newId.' has been inserted');
         // with gửi một dữ liệu mà ta muốn
     }
-
-
-
     public function edit($id)
     {
         $book = BookRepos::getBookById($id); //this is always an array

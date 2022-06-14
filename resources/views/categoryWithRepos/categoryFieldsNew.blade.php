@@ -1,3 +1,16 @@
+<style>
+
+  .boy{
+    margin-right: 100px;
+    margin-left: 105px;
+    margin-top: 35px;
+    /*border: solid 1px red;*/
+
+    width: 75%;
+
+  }
+</style>
+<div class="boy">
 <input type="hidden" name="id_cate" value="{{old('id_cate')?? $category->id_cate}}">
 <div class="form-group">
   <label for="name_cate" class="font-weight-bold">Name</label>
@@ -11,4 +24,4 @@
   <input type="file" name="image_cate" id="image_cate" value="{{old('image_cate')?? $category->image_cate}}">
 
 </div>
-
+</div>

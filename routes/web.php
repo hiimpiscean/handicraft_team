@@ -406,12 +406,20 @@ Route::group(['prefix' => 'studentrepos'], function () {
 
 //////////test////////
  Route::get('project', 'TestController@index');
+
+
+
 ///////////Handicraft////////
 
 Route::group(['prefix' => 'handicraft'], function () {
     Route::get('', function () {
         return view('handicraft.index');
     })->name('home.index');
+
+
+    Route::get('home', function () {
+        return view('handicraft.home');
+    })->name('handicraft.home');
 
     Route::get('order', function () {
         return view('handicraft.order');
@@ -446,6 +454,7 @@ Route::group(['prefix' => 'handicraft'], function () {
 
 ///////////handicraftRepos/////////////////////////
 Route::group(['prefix' => 'handicraftrepos'], function () {
+
     Route::get('', [
         'uses' => 'HandicraftControllerWithRepos@index',
         'as' => 'handicraft.index'
@@ -634,4 +643,55 @@ Route::group(['prefix' => 'customerrepos'], function () {
 
 });
 
+//////////////////////////////Mới Handicraft////////////////////////////////
+Route::group(['prefix'=>'han'],function(){
+    Route::get('',function(){
+        return view('han.index');
+    })->name('han.index');
+    Route::get('menu',function(){
+       return view('han.menu');
+    })->name('han.menu');
+    Route::get('customer',function (){
+       return view('han.customer');
+    })->name('han.customer');
+
+}) ;
+////////////////////////////////////////////////////////////
+Route::group(['prefix' => 'handicraft'], function () {
+    Route::get('', function () {
+        return view('handicraft.index');
+    })->name('home.index');
+
+    Route::get('home', function () {
+        return view('handicraft.home');
+    })->name('handicraft.home');
+
+    Route::get('order', function () {
+        return view('handicraft.order');
+    })->name('handicraft.order');
+
+    Route::get('allhandicraft', function () {
+        return view('handicraft.allhandicraft');
+    })->name('handicraft.allhandicraft');
+
+    Route::get('wood', function () {
+        return view('handicraft.wood');
+    })->name('handicraft.wood');
+
+    Route::get('bamboo', function () {
+        return view('handicraft.bamboo');
+    })->name('handicraft.bamboo');
+
+    Route::get('ceramic', function () {
+        return view('handicraft.ceramic');
+    })->name('handicraft.ceramic');
+
+    Route::get('metal', function () {
+        return view('handicraft.metal');
+    })->name('handicraft.metal');
+
+    Route::get('applepie', function () {
+        return view('handicraft.applepie');
+    })->name('handicraft.applepie');
+});
 
