@@ -485,10 +485,17 @@ Route::group(['prefix' => 'hanUi'], function () {
        return view('hanUi.home') ;
 
     })->name('hanUi.home');
-
+    Route::get('showproducts/{id_cate}',[
+        'uses' => 'HanController@getproductsfromcate',
+        'as' => 'hanUi.showproducts'
+    ]);
     Route::get('create',[
         'uses' => 'HanController@create',
         'as' => 'hanUi.create'
+    ]);
+    Route::get('category',[
+        'uses' => 'HanController@listcate',
+        'as' => 'hanUi.category'
     ]);
     //details
     Route::get('details',function (){
@@ -528,6 +535,10 @@ Route::group(['prefix' => 'hanUi'], function () {
     Route::post('delete/{id_p}',[
         'uses' => 'HanController@destroy',
         'as' => 'hanUi.destroy'
+    ]);
+    Route::get('search/',[
+        'uses' => 'HanController@search',
+        'as' => 'hanUi.search'
     ]);
 
 });

@@ -39,7 +39,7 @@
 
         <li class="nav-item font">
           <a class="nav-link "
-             href="{{route('hanUi.create')}}"
+             href="{{route('hanUi.category')}}"
           >Category</a>
         </li>
 
@@ -106,7 +106,12 @@
             </g>
                 </svg>
         </a>
-        <form class="form-inline">
+
+        <form class="form-inline" action="{{route('hanUi.search')}}" method="get">
+          @csrf
+          <div class="md-form my-0">
+            <input class="form-control-sm" id="query" name="query" type="text" placeholder="Search" aria-label="Search">
+          </div>
           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>

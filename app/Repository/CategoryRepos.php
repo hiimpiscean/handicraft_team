@@ -9,7 +9,7 @@ class CategoryRepos
     public static function getAllCategory(){
         $sql = 'select c.* ';
         $sql .= 'from category as c ';
-        $sql .= 'order by c.name_cate ';
+        $sql .= 'order by c.id_cate ';
 
         return DB::select($sql);
     }

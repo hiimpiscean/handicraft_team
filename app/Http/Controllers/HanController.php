@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repository\CategoryRepos;
 use App\Repository\CustomerRepos;
+use App\Repository\FunctionRepos;
 use App\Repository\ProductRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -94,8 +95,40 @@ class HanController extends Controller
 //            ->with('msg', 'New Han with id: '.$newId.' has been inserted');
 //
 //    }
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $product_search = FunctionRepos::searchForProducts($query);
+
+        return view('hanUi.search',
+            [
+                'product' => $product_search,
+
+            ]);
+    }
+    public function listcate()
+    {
+        $category = CategoryRepos::getAllCategory();
+
+        return view('hanUi.category',
+            [
+                'category' => $category,
+
+            ]);
+    }
 
 
+
+    public function getproductsfromcate($id)
+    {
+        $products = FunctionRepos::getProductsByCateId($id);
+
+        return view('hanUi.productsfromcategory',
+            [
+                'product' => $products,
+
+            ]);
+    }
 
     public function edit($id_p)
     {
