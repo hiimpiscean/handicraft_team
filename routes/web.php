@@ -124,7 +124,10 @@ Route::get('oddnumber', 'NumberController@oddNumber');
 //
 //});
 ///////////Book-Repos//////////////
-Route::group(['prefix' => 'bookrepos'], function () {
+Route::group(
+    ['prefix' => 'bookrepos', 'middleware' => ['manual.auth']],
+//   những  middleware nào áp dụng cho group này
+    function () {
     Route::get('', [
         'uses' => 'BookControllerWithRepos@index',
         'as' => 'book.index'
@@ -165,6 +168,25 @@ Route::group(['prefix' => 'bookrepos'], function () {
         'as' => 'book.destroy'
     ]);
 });
+///////////////////Auth//////////////////////////
+Route::group(['prefix' => 'auth'], function (){
+    Route::get('login',[
+        'uses' => 'ManualAuthController@ask',
+        'as' => 'auth.ask'
+    ]);
+
+    Route::post('login',[
+        'uses' => 'ManualAuthController@signin',
+        'as' => 'auth.signin'
+    ]);
+
+    Route::get('logout',[
+        'uses' => 'ManualAuthController@signout',
+        'as' => 'auth.signout'
+    ]);
+});
+
+/// ////////////////////////////////////////////
 /////////////Classroom//////////////////
 //Route::group(['prefix' => 'class'], function () {
 //
@@ -405,7 +427,7 @@ Route::group(['prefix' => 'studentrepos'], function () {
 
 
 //////////test////////
- Route::get('project', 'TestController@index');
+
 
 
 
@@ -450,10 +472,88 @@ Route::group(['prefix' => 'handicraft'], function () {
     })->name('handicraft.applepie');
 });
 
+//////////////client////////////
 
+Route::group(['prefix' => 'hanUi'], function () {
 
+    Route::get('', [
+        'uses' => 'HanController@index',
+        'as' => 'hanUi.index'
+    ]);
+// home
+    Route::get('home',function(){
+       return view('hanUi.home') ;
+
+    })->name('hanUi.home');
+
+    Route::get('create',[
+        'uses' => 'HanController@create',
+        'as' => 'hanUi.create'
+    ]);
+    //details
+    Route::get('details',function (){
+        return view('hanUi.details');
+    })->name('hanUi.details');
+
+    Route::get('show/{id_p}',[
+        'uses' => 'HanController@show',
+        'as' => 'hanUi.show'
+    ]);
+
+    Route::get('create',[
+        'uses' => 'HanController@create',
+        'as' => 'hanUi.create'
+    ]);
+
+    Route::post('create',[
+        'uses' => 'HanController@store',
+        'as' => 'hanUi.store'
+    ]);
+
+    Route::get('update/{id_p}',[
+        'uses' => 'HanController@edit',
+        'as' => 'hanUi.edit'
+    ]);
+
+    Route::post('update/{id_p}',[
+        'uses' => 'HanController@update',
+        'as' => 'hanUi.update'
+    ]);
+
+    Route::get('delete/{id_p}', [
+        'uses' => 'HanController@confirm',
+        'as' => 'hanUi.confirm'
+    ]);
+
+    Route::post('delete/{id_p}',[
+        'uses' => 'HanController@destroy',
+        'as' => 'hanUi.destroy'
+    ]);
+
+});
+////////////////Login Admin Handicraft////////////////////////////////////
+///
+Route::group(['prefix' => 'authHan'], function (){
+    Route::get('login',[
+        'uses' => 'ManualAuthHanController@ask',
+        'as' => 'authHan.ask'
+    ]);
+
+    Route::post('login',[
+        'uses' => 'ManualAuthHanController@signin',
+        'as' => 'authHan.signin'
+    ]);
+
+    Route::get('logout',[
+        'uses' => 'ManualAuthHanController@signout',
+        'as' => 'authHan.signout'
+    ]);
+});
 ///////////handicraftRepos/////////////////////////
-Route::group(['prefix' => 'handicraftrepos'], function () {
+
+Route::group(
+    ['prefix' => 'handicraftrepos', 'middleware' => ['manualHan.auth']],
+    function () {
 
     Route::get('', [
         'uses' => 'HandicraftControllerWithRepos@index',
@@ -637,10 +737,6 @@ Route::group(['prefix' => 'customerrepos'], function () {
         'uses' => 'CustomerControllerWithRepos@destroy',
         'as' => 'customer.destroy'
     ]);
-
-
-
-
 });
 
 //////////////////////////////Mới Handicraft////////////////////////////////
@@ -654,8 +750,17 @@ Route::group(['prefix'=>'han'],function(){
     Route::get('customer',function (){
        return view('han.customer');
     })->name('han.customer');
+    Route::get('details',function (){
+        return view('han.details');
+    })->name('han.details');
 
-}) ;
+
+    Route::get('applepie', function () {
+        return view('han.applepie');
+    })->name('han.applepie');
+
+});
+
 ////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'handicraft'], function () {
     Route::get('', function () {
@@ -693,5 +798,8 @@ Route::group(['prefix' => 'handicraft'], function () {
     Route::get('applepie', function () {
         return view('handicraft.applepie');
     })->name('handicraft.applepie');
+
 });
+
+
 

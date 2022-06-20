@@ -1,4 +1,4 @@
-@extends('masters.hanMaster')
+@extends('masters.hanUiMaster')
 @section('main')
   <div class="hero_area">
     <div class="bg-box">
@@ -405,17 +405,17 @@
 
   <!--  section -->
   <section class="book_section layout_padding">
-          <div class="heading_container">
-            <h2>
-              Other products
-            </h2>
-          </div>
+    <div class="heading_container">
+      <h2>
+        Other products
+      </h2>
+    </div>
     <div class="card-group">
       <div class="card">
         <img class="card-img-top" width="60px" src="{{asset('images/images/nha1.jpg')}}" alt="Card image cap">
         <div class="card-body">
           <div class="heading_container">
-              Low Knitting Basket
+            Low Knitting Basket
           </div>
           <p class="card-text"></p>
           <p class="card-text"><small class="text-muted"></small></p>
@@ -425,7 +425,7 @@
         <img class="card-img-top" width="60px" src="{{asset('images/images/rohoa1.jpg')}}" alt="Card image cap">
         <div class="card-body">
           <div class="heading_container">
-          Low Knitting Basket
+            Low Knitting Basket
           </div>
 
           <p class="card-text"></p>

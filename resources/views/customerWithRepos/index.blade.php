@@ -191,6 +191,7 @@
 
               <th scope="col" class="text-center" >FullName</th>
               <th scope="col" class="text-center" >DOB</th>
+              <th scope="col" class="text-center" >Gender</th>
               <th scope="col" class="text-center" >Phone</th>
               <th scope="col" class="text-center" >Email</th>
 {{--              <th scope="col" class="text-center" >Address</th>--}}
@@ -204,6 +205,7 @@
               <tr>
                 <td class="text-center" >{{$c->fullName_c}}</td>
                 <td class="text-center" >{{$c->dob}}</td>
+                <td class="text-center" >{{$c->gender}}</td>
                 <td class="text-center" >{{$c->phone_c}}</td>
                 <td class="text-center" >{{$c->email_c}}</td>
 {{--                <td class="text-center" >{{$c->address_c}}</td>--}}

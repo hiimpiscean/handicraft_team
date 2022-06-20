@@ -2,7 +2,7 @@
   <div class="container">
 
     <a class="navbar-brand"
-      {{--       href="{{route('book.index')}}"--}}
+
     >HandicraftWeb</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,33 @@
         </li>
 
 
+        <li class="nav-item dropdown">
+          <a class="nav-link "
+             href="{{route('customer.create')}}"
+          >New customer</a>
+        </li>
+
+
       </ul>
+
+      <ul class="navbar-nav">
+        <li class="nav-item mr-3">
+          <!-- try without mr-3 -->
+          <a class="nav-link" href="#">
+            <i class="bi bi-person"></i>
+            {{\Illuminate\Support\Facades\Session::has('username')?
+              \Illuminate\Support\Facades\Session::get('username') : ''}}
+{{--            usernam lấy trong session nếu mà có usernam thì lấy username còn ko thì in nó rỗng--}}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('authHan.signout')}}">
+            <i class="bi bi-box-arrow-left"></i>
+            Logout
+          </a>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>

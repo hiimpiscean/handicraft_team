@@ -12,13 +12,13 @@
 
 <div class="container bacColor">
   <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="{{route('han.index')}}" style="color: white " >
-          <img src="{{asset('images/handicraf/logo1.png')}}" width=35" height="40" class="d-inline-block align-top" alt="">
+    <a class="navbar-brand" href="{{route('hanUi.home')}}" style="color: white " >
+      <img src="{{asset('images/handicraf/logo1.png')}}" width=35" height="40" class="d-inline-block align-top" alt="">
 
-          <span>Handicraft Shop
+      <span>Handicraft Shop
           </span>
 
-        </a>
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class=""> </span>
@@ -27,31 +27,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav  mx-auto ">
         <li class="nav-item font">
-          <a class="nav-link " href="{{route('han.index')}}">Home
+          <a class="nav-link " href="{{route('hanUi.home')}}">Home
             <span class="sr-only"></span></a>
         </li>
         <li class="nav-item font">
-          <a class="nav-link" href="{{route('han.menu')}}">Products</a>
+          <a class="nav-link" href="{{route('hanUi.index')}}">Products</a>
         </li>
         <li class="nav-item font">
-          <a class="nav-link" href="{{route('han.customer')}}">Customer</a>
+{{--          <a class="nav-link" href="{{route('hanUi.customer')}}">Customer</a>--}}
         </li>
-
-
 
         <li class="nav-item font">
           <a class="nav-link "
-             href="{{route('customer.create')}}"
-          >New customer</a>
+             href="{{route('hanUi.create')}}"
+          >Category</a>
         </li>
 
 
-{{--        <li class="nav-item">--}}
-{{--          <a class="nav-link" href="book.html">Book Table</a>--}}
-{{--        </li>--}}
+        {{--        <li class="nav-item">--}}
+        {{--          <a class="nav-link" href="book.html">Book Table</a>--}}
+        {{--        </li>--}}
       </ul>
       <div class="user_option">
-        <a href="{{route('han.customer')}}" class="user_link">
+        <a href="#" class="user_link">
           <i class="fa fa-user" aria-hidden="true"></i>
         </a>
         <a class="cart_link" href="#">
@@ -113,8 +111,8 @@
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </form>
-        <a href="" class="order_online">
-          Order Online
+        <a href="{{route('hanUi.create')}}" class="order_online">
+          Sign Up
         </a>
       </div>
     </div>

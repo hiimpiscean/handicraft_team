@@ -1,46 +1,63 @@
-@extends('masters.hanMaster')
+@extends('masters.hanUiMaster')
+
 @section('main')
+  <style>
+    .size{
+      width: 70%;
+    }
+  </style>
 
+  <div class="container ">
 
-  <section class="book_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Registered customers
-        </h2>
+    <h1>Vase
+      <small></small>
+    </h1>
+
+    <div class="row">
+
+      <div class="col-md-8">
+        <img class="img-fluid size" src="{{asset('images/images/binhgong.PNG')}}" alt="">
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" class="form-control" placeholder="Full Name" />
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Your Address" />
-              </div>
-              <div>
-                <input type="date" class="form-control">
-              </div>
-              <div class="btn_box">
-                <button>
-                  Register Now
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
 
+      <div class="col-md-4">
+        <h3 class="my-3">About this vase</h3>
+        <p>A handmade house will be a meaningful birthday gift</p>
+
+        <h3 class="my-3">Size</h3>
+        <ul>
+          <li>M</li>
+
+        </ul>
+        <div><h3>Price</h3></div>
+        <div class="row">
+
+          <div class="col-md-4">
+
+            <strong>$20</strong>
+          </div>
+          <div class="col-md-8">
+            <a type="button" href="shoppingbasket.html" data-toggle="modal" data-target="#addToBasketModal"
+               class="btn btn-success float-right">
+              Buy now
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  </div>
+
+
+
+
+  <!-- <span class="border border-primary">test</span> -->
+
+
+
+@endsection
+
+@section('other')
   <footer class="footer_section">
     <div class="container">
       <div class="row">
@@ -59,13 +76,13 @@
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call +84 123456789
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  minh@gmail.com
                 </span>
               </a>
             </div>
@@ -74,10 +91,10 @@
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
             <a href="" class="footer-logo">
-              Feane
+              Handicraft
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+              The brand is present worldwide with 1000 facilities and has been growing since 1972.
             </p>
             <div class="footer_social">
               <a href="">
@@ -106,20 +123,19 @@
             Everyday
           </p>
           <p>
-            10.00 Am -10.00 Pm
+            6.00 Am -11.00 Pm
           </p>
         </div>
       </div>
       <div class="footer-info">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
+          &copy; <span id="displayYear"></span> Copyright belongs to
+          <a href="#">NVM Handicraft</a><br><br>
           &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+          <a href="#" target="_blank">Handicraft Shop</a>
         </p>
       </div>
     </div>
   </footer>
-@endsection
-@section('script')
+
 @endsection

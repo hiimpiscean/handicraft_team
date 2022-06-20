@@ -1,13 +1,13 @@
 body {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background-image: url('../images/cusHan/bak.png');
+    /*background-image: url('../images/cusHan/b');*/
     background-repeat: repeat;
     background-color: #faede5;
 }
 
 .jumbotron-detail-apple-pie {
-    background: url('../images/products/applepie.jpg') no-repeat fixed;
+    /*background: url('../images/products/applepie.jpg') no-repeat fixed;*/
 }
 
 .jumbotron-other {

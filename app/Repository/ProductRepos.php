@@ -84,7 +84,19 @@ class ProductRepos
     }
 
 
+//    public static function det($id_p){
+//        $sql = 'select count(*) FROM product';
+//        $sql = 'where p.category_id = 1';
+//    }
+
 
     //check SELECT count(*) FROM `product` p WHERE p.category_id = 1
-//    if ($count > 0) showErrorMessage(...)
+////    if ($count > 0) showErrorMessage(...)
+
+
+
+
+
+
+
 }

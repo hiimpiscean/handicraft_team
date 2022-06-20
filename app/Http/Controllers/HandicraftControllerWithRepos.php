@@ -85,7 +85,7 @@ class HandicraftControllerWithRepos extends Controller
 
         return redirect()// chuyển hướng
         ->action('HandicraftControllerWithRepos@index')
-            ->with('msg', 'New book with id: '.$newId.' has been inserted');
+            ->with('msg', 'New Product with id: '.$newId.' has been inserted');
 
     }
 
@@ -156,10 +156,6 @@ class HandicraftControllerWithRepos extends Controller
         }
 
         ProductRepos::delete($id_p);
-
-
-
-
         return redirect()->action('HandicraftControllerWithRepos@index')
             ->with('msg', 'Delete Successfully');
     }
@@ -169,11 +165,7 @@ class HandicraftControllerWithRepos extends Controller
         return Validator::make(
             $request->all(),
             [
-
                 'image_p' =>['required'],
-
-
-
             ],
             [
                 'image_p.required' => 'please enter image',

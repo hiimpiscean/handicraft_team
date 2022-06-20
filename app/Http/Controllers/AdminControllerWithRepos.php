@@ -56,10 +56,8 @@ class AdminControllerWithRepos extends Controller
 //            'password' =>$request->input('password'),
 //            $request->user()->fill([
 //                'password' => Hash::make($request->newPassword)
-            'password' => Hash::make($request->input('password'))
-//            ])->save()
+            'password' => Hash::make(sha1($request->input('password')))
 
-//            'password' => $request->input('password'),
         ];
 
         $newId = AdminRepos::insert($admin);
@@ -100,7 +98,7 @@ class AdminControllerWithRepos extends Controller
 //             'password' => Hash::make($request->newPassword)
 //            'password' => Hash::make($request->input('password'))
 
-           'password' => Hash::make(md5($request->input('password')))
+           'password' => Hash::make(sha1($request->input('password')))
 
 
 //            if (Hash::check('secret', $hashedPassword))
@@ -167,10 +165,9 @@ class AdminControllerWithRepos extends Controller
             [
                 'username' => ['required'],
                 'fullName_a' => ['required','min:5'],
-//                'dob' => ['required','date_format:"Y-m-d"'],
                 'phone_a' => ['required','starts_with:0','digits:11'],
                 'email_a' => ['required','email'],
-                'password' => ['required'],
+                'password' => ['required','regex:/[A-Z]$/'],
 //                'password' => ['required_with:password|same:password'],
 //                'password' => ['required','same:new_password'],
 
@@ -182,14 +179,13 @@ class AdminControllerWithRepos extends Controller
                 'phone_a.required' => 'Please enter Phone',
                 'email_a.required' => 'Please enter Email',
                 'password.required' => 'Please enter Password',
-                'password' => 'Please enter Password',
                 'fullName_a.min' => 'Enter Full Name up to 5 characters',
                 'phone_a.digits' => 'Please enter phone exactly 11 numbers',
                 'phone_a.starts_with' => 'Enter a phone number starting with 0',
                 'email_a' => 'Please enter email form',
+                'password.regex'=>'please enter the last character is a capital letter',
+
             ]
         );
     }
-
-
 }

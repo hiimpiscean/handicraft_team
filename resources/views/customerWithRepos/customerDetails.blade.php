@@ -24,6 +24,9 @@
   <dt class="col-sm-3">Dob</dt>
   <dd class="col-sm-9">{{ $customer->dob }}</dd>
 
+  <dt class="col-sm-3">Gender</dt>
+  <dd class="col-sm-9">{{ $customer->gender }}</dd>
+
   <dt class="col-sm-3">Phone</dt>
   <dd class="col-sm-9">{{ $customer->phone_c }}</dd>
 

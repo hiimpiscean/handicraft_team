@@ -56,7 +56,7 @@ class CategoryControllerWithRepos extends Controller
 
         return redirect()
             ->action('CategoryControllerWithRepos@index')
-            ->with('msg', 'New book with id: '.$newId.' has been inserted');
+            ->with('msg', 'New Category with id: '.$newId.' has been inserted');
     }
 
     public function edit($id_cate)

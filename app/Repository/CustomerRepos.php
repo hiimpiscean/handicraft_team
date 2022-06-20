@@ -24,12 +24,13 @@ class CustomerRepos
 
     public static function insert($customer){
         $sql = 'insert into customer ';
-        $sql .= '(fullName_c, dob, phone_c, email_c, address_c) ';
-        $sql .= 'values (?, ?, ?, ?, ?) ';
+        $sql .= '(fullName_c, dob, gender, phone_c, email_c, address_c) ';
+        $sql .= 'values (?, ?, ?, ?, ?, ?) ';
 
         $result =  DB::insert($sql, [
             $customer->fullName_c,
             $customer->dob,
+            $customer->gender,
             $customer->phone_c,
             $customer->email_c,
             $customer->address_c
@@ -45,12 +46,13 @@ class CustomerRepos
 
     public static function update($customer){
         $sql = 'update customer ';
-        $sql .= 'set fullName_c = ?, dob = ?, phone_c = ?, email_c = ?, address_c = ? ';
+        $sql .= 'set fullName_c = ?, dob = ?, gender = ?, phone_c = ?, email_c = ?, address_c = ? ';
         $sql .= 'where id_c = ? ';
 
         DB::update($sql, [
             $customer->fullName_c,
             $customer->dob,
+            $customer->gender,
             $customer->phone_c,
             $customer->email_c,
             $customer->address_c,
