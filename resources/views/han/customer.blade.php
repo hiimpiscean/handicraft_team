@@ -6,24 +6,38 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Registered customers
+          Registration form
         </h2>
+        <h6>Let's join us today!</h6>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="">
+            <form action="{{route('han.store')}}" method="post">
+              @csrf
+              <input type="hidden" name="id_c" value="{{old('id_c')?? $customer->id_c}}">
               <div>
-                <input type="text" class="form-control" placeholder="Full Name" />
+                <input type="text" class="form-control" id="fullName_c" name="fullName_c" value="{{old('fullName_c')?? $customer->fullName_c}}" placeholder="Full Name" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
+                <input type="date" class="form-control"  id="dob" name="dob" value="{{old('dob')?? $customer->dob}}">
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
+                <select id="gender" name="gender" {{--value="{{old('gender')?? $customer->gender}}"--}}>
+                  <option value="nam">Male</option>
+                  <option value="nu">Female</option>
+                  <option value="khac">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <input type="text" class="form-control" placeholder="Phone Number" id="phone_c" name="phone_c" value="{{old('phone_c')?? $customer->phone_c}}"/>
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Your Address" />
+                <input type="email" class="form-control" placeholder="Your Email" id="email_c" name="email_c" value="{{old('email_c')?? $customer->email_c}}"/>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Your Address" id="address_c" name="address_c" value="{{old('address_c')?? $customer->address_c}}"/>
               </div>
 
 {{--              <div>--}}
@@ -45,11 +59,9 @@
 {{--                  </option>--}}
 {{--                </select>--}}
 {{--              </div>--}}
-              <div>
-                <input type="date" class="form-control">
-              </div>
+
               <div class="btn_box">
-                <button>
+                <button type="submit" >
                   Register Now
                 </button>
               </div>

@@ -24,8 +24,8 @@ class CustomerRepos
 
     public static function insert($customer){
         $sql = 'insert into customer ';
-        $sql .= '(fullName_c, dob, phone_c, email_c, address_c) ';
-        $sql .= 'values (?, ?, ?, ?, ?) ';
+        $sql .= '(fullName_c, dob, gender, phone_c, email_c, address_c) ';
+        $sql .= 'values (?, ?, ?, ?, ?, ?) ';
 
         $result =  DB::insert($sql, [
             $customer->fullName_c,

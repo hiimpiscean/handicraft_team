@@ -645,53 +645,24 @@ Route::group(['prefix' => 'customerrepos'], function () {
 
 //////////////////////////////Mới Handicraft////////////////////////////////
 Route::group(['prefix'=>'han'],function(){
-    Route::get('',function(){
-        return view('han.index');
-    })->name('han.index');
-    Route::get('menu',function(){
-       return view('han.menu');
-    })->name('han.menu');
-    Route::get('customer',function (){
-       return view('han.customer');
-    })->name('han.customer');
+    Route::get('',[
+        'uses' => 'HandicraftFPControllerWithRepos@index',
+        'as' => 'han.index'
+    ]);
+    Route::get('menu',[
+        'uses' => 'HandicraftFPControllerWithRepos@menu',
+        'as' => 'han.menu'
+    ]);
+    Route::get('customer',[
+        'uses' => 'HandicraftFPControllerWithRepos@create',
+        'as' => 'han.customer'
+    ]);
+    Route::post('customer',[
+        'uses' => 'HandicraftFPControllerWithRepos@store',
+        'as' => 'han.store'
+    ]);
 
 }) ;
 ////////////////////////////////////////////////////////////
-Route::group(['prefix' => 'handicraft'], function () {
-    Route::get('', function () {
-        return view('handicraft.index');
-    })->name('home.index');
 
-    Route::get('home', function () {
-        return view('handicraft.home');
-    })->name('handicraft.home');
-
-    Route::get('order', function () {
-        return view('handicraft.order');
-    })->name('handicraft.order');
-
-    Route::get('allhandicraft', function () {
-        return view('handicraft.allhandicraft');
-    })->name('handicraft.allhandicraft');
-
-    Route::get('wood', function () {
-        return view('handicraft.wood');
-    })->name('handicraft.wood');
-
-    Route::get('bamboo', function () {
-        return view('handicraft.bamboo');
-    })->name('handicraft.bamboo');
-
-    Route::get('ceramic', function () {
-        return view('handicraft.ceramic');
-    })->name('handicraft.ceramic');
-
-    Route::get('metal', function () {
-        return view('handicraft.metal');
-    })->name('handicraft.metal');
-
-    Route::get('applepie', function () {
-        return view('handicraft.applepie');
-    })->name('handicraft.applepie');
-});
 

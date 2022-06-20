@@ -100,7 +100,7 @@ class AdminControllerWithRepos extends Controller
 //             'password' => Hash::make($request->newPassword)
 //            'password' => Hash::make($request->input('password'))
 
-           'password' => Hash::make(md5($request->input('password')))
+           'password' => Hash::make(hash('sha256',$request->input('password')))
 
 
 //            if (Hash::check('secret', $hashedPassword))
