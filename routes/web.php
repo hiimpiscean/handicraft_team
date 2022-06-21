@@ -600,7 +600,7 @@ Route::group(
 
 /////////////admin///////////////////
 
-Route::group(['prefix' => 'adminrepos'], function () {
+Route::group(['prefix' => 'adminrepos', 'middleware' => ['manualHan.auth']], function () {
     Route::get('', [
         'uses' => 'AdminControllerWithRepos@index',
         'as' => 'admin.index'
@@ -653,7 +653,7 @@ Route::group(['prefix' => 'adminrepos'], function () {
 ///////////////Category////////////////////
 
 
-Route::group(['prefix' => 'categoryrepos'], function () {
+Route::group(['prefix' => 'categoryrepos', 'middleware' => ['manualHan.auth']], function () {
 
     Route::get('', [
         'uses' => 'CategoryControllerWithRepos@index',
@@ -697,7 +697,7 @@ Route::group(['prefix' => 'categoryrepos'], function () {
 });
 
 ////////////////////////Customer////////////////////////////////////
-Route::group(['prefix' => 'customerrepos'], function () {
+Route::group(['prefix' => 'customerrepos', 'middleware' => ['manualHan.auth']], function () {
     Route::get('', [
         'uses' => 'CustomerControllerWithRepos@index',
         'as' => 'customer.index'
@@ -800,6 +800,9 @@ Route::group(['prefix' => 'handicraft'], function () {
     })->name('handicraft.applepie');
 
 });
+/////////////////////Test//////////////////////
 
 
+
+/////////////////////////////////////////////////
 

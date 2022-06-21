@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-6 mb-3 form-group">
           <label for="lastName">DOB</label>
-          <input type="text" class="form-control" id="dob" name="dob" value="{{old('dob')?? $customer->dob}}">
+          <input type="date" class="form-control" id="dob" name="dob" value="{{old('dob')?? $customer->dob}}">
         </div>
       </div>
 
