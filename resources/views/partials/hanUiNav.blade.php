@@ -31,16 +31,14 @@
             <span class="sr-only"></span></a>
         </li>
         <li class="nav-item font">
-          <a class="nav-link" href="{{route('hanUi.index')}}">Products</a>
+          <a class="nav-link" href  ="{{route('hanUi.index')}}">Products</a>
         </li>
         <li class="nav-item font">
 {{--          <a class="nav-link" href="{{route('hanUi.customer')}}">Customer</a>--}}
         </li>
 
         <li class="nav-item font">
-          <a class="nav-link "
-             href="{{route('hanUi.create')}}"
-          >Category</a>
+          <a class="nav-link" href="{{route('hanUi.category')}}">Category</a>
         </li>
 
 
