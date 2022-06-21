@@ -97,13 +97,14 @@
                 <div>
                   <div class="img-box">
                     {{--  ///////////////////////////// link details ///////////////////////////////////--}}
-                    <a href="{{route('hanUi.details')}}">
-                      <img src="{{asset('images/handicraf/'. $c->image_cate)}}"  alt="">
+                    <a href="{{route('hanUi.showproducts', ['id_cate' => $c->id_cate])}}" >
+                      <img src="{{asset('images/category/'. $c->image_cate)}}"  alt="">
                     </a>
                   </div>
                   <div class="detail-box">
-                    <h5>
-                      <a type="button" class="btn btn-link" href="{{route('hanUi.showproducts', ['id_cate' => $c->id_cate])}}">{{$c->name_cate}}
+                    <h5 >
+                      <a class="text-light" href="{{route('hanUi.showproducts', ['id_cate' => $c->id_cate])}}" >{{$c->name_cate}}</a>
+
                     </h5>
 {{--                    <p>--}}
 {{--                      {{$c->description_p}}--}}

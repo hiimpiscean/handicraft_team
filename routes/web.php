@@ -485,7 +485,7 @@ Route::group(['prefix' => 'hanUi'], function () {
        return view('hanUi.home') ;
 
     })->name('hanUi.home');
-    Route::get('showproducts/{id_cate}',[
+    Route::get('category/{id_cate}',[
         'uses' => 'HanController@getproductsfromcate',
         'as' => 'hanUi.showproducts'
     ]);
@@ -498,10 +498,11 @@ Route::group(['prefix' => 'hanUi'], function () {
         'as' => 'hanUi.category'
     ]);
     //details
-    Route::get('details',function (){
-        return view('hanUi.details');
-    })->name('hanUi.details');
 
+    Route::get('details/{id_p}',[
+        'uses' => 'HanController@showdetails',
+        'as' => 'hanUi.details'
+    ]);
     Route::get('show/{id_p}',[
         'uses' => 'HanController@show',
         'as' => 'hanUi.show'

@@ -9,19 +9,19 @@
 
   <div class="container ">
 
-    <h1>Vase
+    <h1>{{$product->name_p}}
       <small></small>
     </h1>
 
     <div class="row">
 
       <div class="col-md-8">
-        <img class="img-fluid size" src="{{asset('images/images/binhgong.PNG')}}" alt="">
+        <img class="img-fluid size" src="{{asset('images/handicraf/'. $product->image_p)}}" alt="">
       </div>
 
       <div class="col-md-4">
-        <h3 class="my-3">About this vase</h3>
-        <p>A handmade house will be a meaningful birthday gift</p>
+        <h3 class="my-3">About this product</h3>
+        <p>{{$product->description_p}}</p>
 
         <h3 class="my-3">Size</h3>
         <ul>
@@ -33,7 +33,7 @@
 
           <div class="col-md-4">
 
-            <strong>$20</strong>
+            <strong>${{$product->price_p}}</strong>
           </div>
           <div class="col-md-8">
             <a type="button" href="shoppingbasket.html" data-toggle="modal" data-target="#addToBasketModal"

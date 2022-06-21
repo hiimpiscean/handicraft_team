@@ -122,10 +122,20 @@ class HanController extends Controller
     public function getproductsfromcate($id)
     {
         $products = FunctionRepos::getProductsByCateId($id);
-
+        $cat = CategoryRepos::getCategoryById($id);
         return view('hanUi.productsfromcategory',
             [
                 'product' => $products,
+                'category' => $cat[0],
+
+            ]);
+    }
+    public function showdetails($id_p)
+    {
+        $product = ProductRepos::getProductById($id_p);
+        return view('hanUi.details',
+            [
+                'product' => $product[0],
 
             ]);
     }
