@@ -39,7 +39,7 @@
 
         <li class="nav-item font">
           <a class="nav-link "
-{{--             href="{{route('hanUi.create')}}"--}}
+             href="{{route('hanUi.create')}}"
           >Category</a>
         </li>
 
