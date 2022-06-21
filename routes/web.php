@@ -499,7 +499,7 @@ Route::group(['prefix' => 'hanUi'], function () {
     ]);
     //details
 
-    Route::get('details/{id_p}',[
+    Route::get('details/{id_p?}',[
         'uses' => 'HanController@showdetails',
         'as' => 'hanUi.details'
     ]);

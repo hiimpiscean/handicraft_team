@@ -71,13 +71,10 @@
 
       {{--      ///////////////////////////////--}}
 
-
+      <?php $cat_lower = strtolower($category->name_cate); ?>
       <div class="heading_container heading_center pa">
-        <?php
-/*        $cat_lower = $category->name_cate;
-        */?>
         <h1 >
-          Products from <?php echo strtolower($category->name_cate); ?>
+          Products from <?php echo $cat_lower; ?>
         </h1>
       </div>
 

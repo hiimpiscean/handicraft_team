@@ -14,14 +14,16 @@ class CategoryRepos
         return DB::select($sql);
     }
 
-
-    public static function getCategoryById($productId){
+    public static function getCategoryById($id){
         $sql = 'select c.* ';
         $sql .= 'from category as c ';
-        $sql .= 'where c.id_cate = ?';
+        $sql .= 'where c.id_cate = ? ';
 
-        return DB::select($sql, [$productId]);
+        return DB::select($sql, [$id]);
     }
+
+
+
     /////////////sai//////////////
     public static function getCategoryByProductId($productId){
         $sql = 'select c.* ';

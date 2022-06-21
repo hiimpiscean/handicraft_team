@@ -13,7 +13,7 @@
                   </div>
                   <div class="detail-box">
                     <h5>
-                      <a class="text-light" href="{{route('hanUi.details', ['id_p' => $p->id_p])}}" >{{$p->name_p}}</a>
+                      <a class="text-light" href="{{route('hanUi.details', $p->id_p)}}" >{{$p->name_p}}</a>
                     </h5>
                     <p>
                       {{$p->description_p}}
