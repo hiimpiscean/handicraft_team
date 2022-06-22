@@ -265,7 +265,7 @@
 
 {{--  New Form--}}
 
-    <form action="{{route('customer.store')}}" method="post">
+    <form action="{{route('hanUi.store')}}" method="post">
 
 
       <input type="hidden" name="id_c" value="{{old('id_c')?? $customer->id_c}}">

@@ -7,7 +7,7 @@
                 <div>
                   <div class="img-box">
                     {{--  ///////////////////////////// link details ///////////////////////////////////--}}
-                    <a href="{{route('hanUi.details')}}">
+                    <a href="{{route('hanUi.details', $p->id_p)}}">
                       <img src="{{asset('images/handicraf/'. $p->image_p)}}"  alt="">
                     </a>
                   </div>

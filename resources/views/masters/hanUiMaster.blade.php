@@ -27,7 +27,7 @@
   <link href="{{asset('css/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{asset('css/css/responsive.css')}}" rel="stylesheet" />
-
+  <link rel="icon" type="image/x-icon" href="{{asset('images/handicraf/logo1.png')}}"/>
   <title>Handicraft </title>
 </head>
 

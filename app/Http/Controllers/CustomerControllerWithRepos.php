@@ -62,7 +62,7 @@ class CustomerControllerWithRepos extends Controller
         $newId = CustomerRepos::insert($customer);
 
         return redirect()
-            ->action('CustomerControllerWithRepos@index')
+            ->action('HanController@index')
             ->with('msg', 'New Customer with id: '.$newId.' has been inserted');
     }
 

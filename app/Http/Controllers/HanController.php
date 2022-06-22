@@ -117,7 +117,25 @@ class HanController extends Controller
             ]);
     }
 
+    public function storecustomer(Request $request)
+    {
+        $this->formValidate($request)->validate(); //shortcut
 
+        $customer = (object)[
+            'fullName_c' => $request->input('fullName_c'),
+            'dob' => $request->input('dob'),
+            'gender' => $request->input('gender'),
+            'phone_c' => $request->input('phone_c'),
+            'email_c' => $request->input('email_c'),
+            'address_c' => $request->input('address_c'),
+        ];
+
+        $newId = CustomerRepos::insert($customer);
+
+        return redirect()
+            ->action('HanController@index')
+            ->with('msg', 'New Customer with id: '.$newId.' has been inserted');
+    }
 
     public function getproductsfromcate($id)
     {
@@ -139,8 +157,71 @@ class HanController extends Controller
 
             ]);
     }
+    public function create()
+    {
 
-    public function edit($id_p)
+        return view(
+            'hanUi.new',
+            ["customer" => (object)[
+                'id_c' => '',
+                'fullName_c' => '',
+                'dob' => '',
+                'gender'=>'',
+                'phone_c' => '',
+                'email_c' => '',
+                'address_c' => ''
+            ]]);
+
+    }
+
+
+
+    private function formValidate($request)
+    {
+        return Validator::make(
+            $request->all(),
+            [
+                'fullName_c' => ['required','min:5'],
+                'dob' => ['required','date_format:"Y-m-d"'],
+                'gender'=>['required','regex:/^N|K/' ,'regex:/u|m|c$/'],
+//                ,'regex:nu|nam|khac'
+                'phone_c' => ['required','starts_with:0','digits:11'],
+                'email_c' => ['required','email'],
+
+            ],
+            [
+                'fullName_c.required'=>'Please enter Full name',
+                'fullName_c.min'=>'Enter Full Name up to 5 characters',
+                'gender.required'=>'Please enter Gender',
+                'phone_c.required'=>'Please enter Phone',
+                'phone_c.starts_with'=>'Enter a phone number starting with 0',
+                'phone_c.digits'=>'Please enter exactly 11 numbers',
+                'email_c.required'=>'Please enter Email',
+                'email_c.email'=>'Please enter email form',
+
+
+            ]
+
+        );
+    }
+    /*   private function formValidate($request)
+       {
+           return Validator::make(
+               $request->all(),
+               [
+
+                   'image_p' =>['required'],
+
+
+
+               ],
+               [
+                   'image_p.required' => 'please enter image',
+
+               ]
+           );
+       }*/
+/*    public function edit($id_p)
     {
         $product = ProductRepos::getProductById($id_p); //this is always an array
 
@@ -210,45 +291,13 @@ class HanController extends Controller
 
 
         return redirect()->action('HanController@index')
-            ->with('msg', 'Delete Successfully');
-    }
-
-    private function formValidate($request)
-    {
-        return Validator::make(
-            $request->all(),
-            [
-
-                'image_p' =>['required'],
+        /*    ->with('msg', 'Delete Successfully');*/
+//    }
 
 
 
-            ],
-            [
-                'image_p.required' => 'please enter image',
 
-            ]
-        );
-    }
-
-
-    public function create()
-    {
-
-        return view(
-            'hanUi.new',
-            ["customer" => (object)[
-                'id_c' => '',
-                'fullName_c' => '',
-                'dob' => '',
-                'gender'=>'',
-                'phone_c' => '',
-                'email_c' => '',
-                'address_c' => ''
-        ]]);
-
-    }
-
+/*
     public function store(Request $request)
     {
         $this->formValidate($request)->validate(); //shortcut
@@ -267,6 +316,6 @@ class HanController extends Controller
         return redirect()
             ->action('CustomerControllerWithRepos@index')
             ->with('msg', 'New Customer with id: '.$newId.' has been inserted');
-    }
+    }*/
 
 }

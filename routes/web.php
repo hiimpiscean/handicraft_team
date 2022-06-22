@@ -514,7 +514,7 @@ Route::group(['prefix' => 'hanUi'], function () {
     ]);
 
     Route::post('create',[
-        'uses' => 'HanController@store',
+        'uses' => 'HanController@storecustomer',
         'as' => 'hanUi.store'
     ]);
 
