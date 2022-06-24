@@ -37,9 +37,14 @@
 </div>
 
 <div class="form-group">
-  <label for="password" class="font-weight-bold">Password</label>
-  <input type="password" class="form-control" id="password" name="password" value="">
+  <label for="old_password" class="font-weight-bold">Old password</label>
+  <input type="password" class="form-control" id="old_password" name="old_password" value="">
 </div>
+
+  <div class="form-group">
+    <label for="new_password" class="font-weight-bold">New password</label>
+    <input type="password" class="form-control" id="new_password" name="new_password" value="">
+  </div>
 
   <div class="form-group">
     <label for="confirm_password" class="font-weight-bold">Confirm password</label>

@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use Illuminate\Support\Facades\DB;
 
-class adminRepos
+class AdminRepos
 {
     public static function getAllAdmin() {
         $sql = 'select a.* ';

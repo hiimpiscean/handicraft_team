@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Repository\adminRepos;
+use App\Repository\AdminRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -11,7 +11,7 @@ class AdminControllerWithRepos extends Controller
 {
     public function index()
     {
-        $admin = adminRepos::getAllAdmin();
+        $admin = AdminRepos::getAllAdmin();
         return view('adminWithRepos.index',
             [
                 'admin' => $admin,
@@ -20,7 +20,7 @@ class AdminControllerWithRepos extends Controller
     public function show($id_a)
     {
 
-        $admin = adminRepos::getAdminById($id_a); //this is always an array of objects
+        $admin = AdminRepos::getAdminById($id_a); //this is always an array of objects
         return view('adminWithRepos.show',
             [
                 'admin' => $admin[0] //get the first element
@@ -46,7 +46,7 @@ class AdminControllerWithRepos extends Controller
 
     public function store(Request $request)
     {
-        $this->formValidate($request)->validate(); //shortcut
+        $this->addValidate($request)->validate(); //shortcut
 
         $admin = (object)[
             'username' => $request->input('username'),
@@ -56,7 +56,7 @@ class AdminControllerWithRepos extends Controller
 //            'password' =>$request->input('password'),
 //            $request->user()->fill([
 //                'password' => Hash::make($request->newPassword)
-            'password' => Hash::make(sha1($request->input('password')))
+            'password' =>  hash('sha256', $request->input('password'))
 
         ];
 
@@ -84,38 +84,55 @@ class AdminControllerWithRepos extends Controller
             return redirect()->action('AdminControllerWithRepos@index');
         }
 
-
-        $this->formValidate($request)->validate(); //shortcut
-
-        $admin = (object)[
-            'id_a' => $request->input('id_a'),
-            'username' => $request->input('username'),
-            'fullName_a' => $request->input('fullName_a'),
-            'phone_a' => $request->input('phone_a'),
-            'email_a' => $request->input('email_a'),
+        $old_password_input = hash('sha256',$request->input('old_password'));
+        $sub = '';
+        $passdb = AdminRepos::getAdminById($id_a); //array
+        foreach($passdb as $cat)
+        {
+            $sub.=$cat->password;
+        }
+        $this->formValidate($request)->validate();
+        if ($old_password_input == $sub) //hash check,
+            {
+                // $hashedPassword = newPassword;
+                // The passwords match...
+                //shortcut
+                $admin = (object)[
+                    'id_a' => $request->input('id_a'),
+                    'username' => $request->input('username'),
+                    'fullName_a' => $request->input('fullName_a'),
+                    'phone_a' => $request->input('phone_a'),
+                    'email_a' => $request->input('email_a'),
 //            'password' => $request->input('password'),
 //            $request->user()->fill([
 //             'password' => Hash::make($request->newPassword)
 //            'password' => Hash::make($request->input('password'))
-
-           'password' => Hash::make(sha1($request->input('password')))
-
-
-//            if (Hash::check('secret', $hashedPassword))
-//            {
-//                $hashedPassword = newPassword;
-//                // The passwords match...
-//            }
-//            ])->save()
+                    'password' =>  hash('sha256', $request->input('new_password')),
 
 
 
-        ];
 
-        AdminRepos::update($admin);
 
-        return redirect()->action('AdminControllerWithRepos@index')
-            ->with('msg', 'Update Successfully');;
+
+                ];
+
+                AdminRepos::update($admin);
+
+                return redirect()->action('AdminControllerWithRepos@index')
+                    ->with('msg', 'Update Successfully');
+
+            }
+        else
+        {
+            return redirect()
+                ->action('AdminControllerWithRepos@index')
+              //  ->withErrors(['msg' => 'Cannot update admin with ID: '.$id_a.'!'])
+                ->withErrors(['msg' => 'Giải mã đi các cháu ^^: '.$sub]);
+        }
+
+
+
+
     }
 
     public function confirm($id_a){
@@ -158,7 +175,7 @@ class AdminControllerWithRepos extends Controller
 //        }
 //    }
 
-    private function formValidate($request)
+    private function addValidate($request)
     {
         return Validator::make(
             $request->all(),
@@ -168,8 +185,7 @@ class AdminControllerWithRepos extends Controller
                 'phone_a' => ['required','starts_with:0','digits:11'],
                 'email_a' => ['required','email'],
                 'password' => ['required','regex:/[A-Z]$/'],
-//                'password' => ['required_with:password|same:password'],
-//                'password' => ['required','same:new_password'],
+                'confirm_password' => ['required_with:password','same:password'],
 
             ],
             [
@@ -183,8 +199,38 @@ class AdminControllerWithRepos extends Controller
                 'phone_a.digits' => 'Please enter phone exactly 11 numbers',
                 'phone_a.starts_with' => 'Enter a phone number starting with 0',
                 'email_a' => 'Please enter email form',
-                'password.regex'=>'please enter the last character is a capital letter',
+                'password.regex'=>'Password\'s last character must be a capital letter!',
+                'confirm_password.same'=>'Password confirmation mismatch!',
+            ]
+        );
+    }
+    private function formValidate($request)
+    {
+        return Validator::make(
+            $request->all(),
+            [
+                'username' => ['required'],
+                'fullName_a' => ['required','min:5'],
+                'phone_a' => ['required','starts_with:0','digits:11'],
+                'email_a' => ['required','email'],
+                'old_password' => ['required'],
+                'new_password' => ['required','regex:/[A-Z]$/'],
+                'confirm_password' => ['required_with:new_password','same:new_password'],
 
+            ],
+            [
+//                //change validation message
+//                'title.starts_with' => 'Title must start with letter a'
+                'fullName_a.required' => 'Please enter Full Name',
+                'phone_a.required' => 'Please enter Phone',
+                'email_a.required' => 'Please enter Email',
+                'old_password.required' => 'Please enter Password',
+                'fullName_a.min' => 'Enter Full Name up to 5 characters',
+                'phone_a.digits' => 'Please enter phone exactly 11 numbers',
+                'phone_a.starts_with' => 'Enter a phone number starting with 0',
+                'email_a' => 'Please enter email form',
+                'new_password.regex'=>'Password\'s last character must be a capital letter!',
+                'confirm_password.same'=>'Password confirmation mismatch!',
             ]
         );
     }

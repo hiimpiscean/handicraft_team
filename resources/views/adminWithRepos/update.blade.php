@@ -30,7 +30,7 @@
 
     <form action="{{route('admin.update', ['id_a' => old('id_a')?? $admin->id_a])}}" method="post">
       @csrf
-      @include('adminWithRepos.adminFields')
+      @include('adminWithRepos.adminUpdateFields')
 
       <button type="submit" class="btn btn-dark but">Submit</button>
       <a href="{{route('admin.index')}}" class="btn btn-info cancel">Cancel</a>
