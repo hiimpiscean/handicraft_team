@@ -22,17 +22,13 @@
       <div class="col-md-4">
         <h3 class="my-3">About this product</h3>
         <p>{{$product->description_p}}</p>
-
         <h3 class="my-3">Size</h3>
         <ul>
           <li>M</li>
-
         </ul>
         <div><h3>Price</h3></div>
         <div class="row">
-
           <div class="col-md-4">
-
             <strong>${{$product->price_p}}</strong>
           </div>
           <div class="col-md-8">
@@ -47,14 +43,7 @@
   </div>
 
   </div>
-
-
-
-
   <!-- <span class="border border-primary">test</span> -->
-
-
-
 @endsection
 
 @section('other')

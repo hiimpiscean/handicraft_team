@@ -14,7 +14,6 @@ class FunctionRepos
 
         return DB::select ($sql);
     }
-
     public static function getProductsByCateId($id_c){
             $sql = 'select p.* ';
             $sql .= 'from product as p ';
@@ -24,5 +23,5 @@ class FunctionRepos
 
             return DB::select($sql, [$id_c]);
     }
-
 }
+

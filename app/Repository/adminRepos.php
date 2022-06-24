@@ -43,7 +43,8 @@ class adminRepos
 
     public static function update($admin){
         $sql = 'update admin ';
-        $sql .= 'set username = ?, fullName_a = ?, phone_a = ?, email_a = ?, password = ? ';
+        $sql .= 'set username = ?, fullName_a = ?, phone_a = ?, email_a = ?, password = sha1(?) ';
+//          $sql .= 'set admin_username = ?, admin_password = sha1(?), admin_name = ?, admin_DOB = ?, phone_number = ?, admin_email = ? ';
         $sql .= 'where id_a = ? ';
 
         DB::update($sql, [

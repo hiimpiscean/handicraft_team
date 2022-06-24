@@ -29,7 +29,6 @@ class ManualAuth
             $out->writeln('authenticated: '.Session::get('username'));
         }
 
-
         return $next($request);
     }
 }

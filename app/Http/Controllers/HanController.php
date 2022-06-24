@@ -119,6 +119,7 @@ class HanController extends Controller
 
     public function storecustomer(Request $request)
     {
+//        dd($request->all());
         $this->formValidate($request)->validate(); //shortcut
 
         $customer = (object)[
@@ -183,8 +184,6 @@ class HanController extends Controller
             [
                 'fullName_c' => ['required','min:5'],
                 'dob' => ['required','date_format:"Y-m-d"'],
-                'gender'=>['required','regex:/^N|K/' ,'regex:/u|m|c$/'],
-//                ,'regex:nu|nam|khac'
                 'phone_c' => ['required','starts_with:0','digits:11'],
                 'email_c' => ['required','email'],
 
@@ -192,7 +191,6 @@ class HanController extends Controller
             [
                 'fullName_c.required'=>'Please enter Full name',
                 'fullName_c.min'=>'Enter Full Name up to 5 characters',
-                'gender.required'=>'Please enter Gender',
                 'phone_c.required'=>'Please enter Phone',
                 'phone_c.starts_with'=>'Enter a phone number starting with 0',
                 'phone_c.digits'=>'Please enter exactly 11 numbers',

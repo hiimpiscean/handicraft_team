@@ -10,7 +10,15 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
         crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="{{asset('css/hanstyle.css')}}">
+{{--  <link rel="stylesheet" href="{{asset('css/hanstyle.css')}}">--}}
+{{--///////////////////////////--}}
+  <link rel="stylesheet" href="{{asset('mau/font.css')}}" />
+  <!-- https://fontawesome.com/ -->
+  <link rel="stylesheet" href="{{'mau/bootstrap.css'}}" />
+  <!-- https://getbootstrap.com/ -->
+  <link rel="stylesheet" href="{{'mau/templatemo.css'}}}">
+{{--  ////////////////////////////--}}
+
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 {{--  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">--}}
 {{--  <!-- https://fonts.google.com/specimen/Roboto -->--}}

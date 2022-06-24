@@ -2,40 +2,11 @@
 @section('main')
 {{--/////////////////////////////////////////////////--}}
 
-{{--<style>--}}
-
-{{--  .boy{--}}
-{{--    margin-right: 100px;--}}
-{{--    margin-left: 90px;--}}
-{{--    margin-top: 50px;--}}
-{{--    /*border: solid 1px red;*/--}}
-{{--    width: 85%;--}}
-
-{{--  }--}}
-
-{{--  .but{--}}
-{{--    margin: 30px 20px 40px 300px;--}}
-{{--    /*border : solid 1px red;*/--}}
-
-{{--  }--}}
-{{--  .cancel{--}}
-{{--    margin-left: 400px;--}}
-{{--  }--}}
-
-{{--</style>--}}
-
-
-
-{{--new style--}}
-
-
 <style>
-
-
-  * {
+/*  * {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif ;
-  }
+  }*/
   body{
     margin: 0;
     padding:0;
@@ -62,8 +33,7 @@
   }
 
   .signup-wrapper .company-details {
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmLLB8YHdISFCP03uK1QubqXhlOYiCiHQ28igMulnlQZw7j9ESFLA8kbjblXo2gtIB1O8&usqp=CAU);
-  /*background-image: url("public/images/bethany-fullsize.jpg");*/
+    background: url(https://www.re-thinkingthefuture.com/wp-content/uploads/2021/05/A4086-Handicraft-from-Northeast-India.jpg);
     background-size: cover;
     position:relative;
 
@@ -109,7 +79,6 @@
     font-size: 2em;
     text-shadow: 1px 1px #4b4a4a;
     text-align: center;
-
   }
   .signup-wrapper .company-details .slogan {
     display: none;
@@ -256,18 +225,15 @@
   }
   }
 
+
+
 </style>
 {{--  --}}
-{{--@include('partials.errors')--}}
-
-
-
+@include('partials.errors')
 
 {{--  New Form--}}
-
+<body class="rong">
     <form action="{{route('hanUi.store')}}" method="post">
-
-
       <input type="hidden" name="id_c" value="{{old('id_c')?? $customer->id_c}}">
 
 <div class="content-wrapper body-form">
@@ -289,7 +255,7 @@
       </div>
       <div class="signup-form ">
         <div class="wrapper-2">
-{{--          <div class="form-title">Sign up today!</div>--}}
+
           <div class="form">
 
                <p class="content-item">
@@ -305,12 +271,15 @@
 
                 </label>
               </p>
-  <p class="content-item">
-  <label>Gender
-    <input type="text" class="form-control " id="gender" name="gender" value="{{old('gender')?? $customer->gender}}">
-  </label>
-  </p>
 
+            <label class="content-item">Gender
+
+                <select class="form-control" id="gender" name="gender" value="{{old('gender')?? $customer->gender}}">
+                 <option>Female</option>
+                   <option>Male</option>
+                   <option>Other</option>
+                 </select>
+            </label>
               <p class="content-item">
 
                 <label>Email
@@ -318,19 +287,19 @@
                 </label>
               </p>
 
-  <p class="content-item">
-  <label>Address
-         <input type="text" class="form-control" id="address_c" name="address_c" value="{{old('address_c')?? $customer->address_c}}">
+          <p class="content-item">
+          <label>Address
+                 <input type="text" class="form-control" id="address_c" name="address_c" value="{{old('address_c')?? $customer->address_c}}">
 
-  </label>
+          </label>
 
-  </p>
-  <p class="content-item">
-<label>Phone
+          </p>
+          <p class="content-item">
+        <label>Phone
 
-  <input type="text" class="form-control" id="phone_c" name="phone_c" value="{{old('phone_c')?? $customer->phone_c}}">
-  </label>
-  </p>
+          <input type="text" class="form-control" id="phone_c" name="phone_c" value="{{old('phone_c')?? $customer->phone_c}}">
+          </label>
+          </p>
 
 
 {{--      @csrf--}}
@@ -452,7 +421,7 @@
       </div>
     </div>
   </footer>
-
+  </body>
 @endsection
 @section('script')
 @endsection
@@ -585,3 +554,4 @@
 @section('script')
 @endsection
 --}}
+
