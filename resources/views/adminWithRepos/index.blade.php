@@ -746,7 +746,6 @@
       /*height: 100px;*/
       z-index: 10;
     }
-
   </style>
 {{--  <div class="container">--}}
 {{--    <h1 class="display-4">Admin Index</h1>--}}
@@ -941,8 +940,11 @@
   <div class="container mt-5">
   <div class="row tm-content-row">
     <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
+
       <div class="tm-bg-primary-dark tm-block tm-block-products">
+        @include(('adminWithRepos.sessionmessage'))
         <div class="tm-product-table-container">
+
           <table class="table table-hover tm-table-small tm-product-table">
             <thead>
             <tr>

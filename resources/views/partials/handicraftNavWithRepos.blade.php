@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
 
-    <a class="navbar-brand"
+    <a class="navbar-brand text-light"
 
     >HandicraftWeb</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"

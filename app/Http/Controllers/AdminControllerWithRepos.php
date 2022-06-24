@@ -56,7 +56,7 @@ class AdminControllerWithRepos extends Controller
 //            'password' =>$request->input('password'),
 //            $request->user()->fill([
 //                'password' => Hash::make($request->newPassword)
-            'password' =>  hash('sha256', $request->input('password'))
+            'password' =>  hash('sha1', $request->input('password'))
 
         ];
 
@@ -84,7 +84,7 @@ class AdminControllerWithRepos extends Controller
             return redirect()->action('AdminControllerWithRepos@index');
         }
 
-        $old_password_input = hash('sha256',$request->input('old_password'));
+        $old_password_input = hash('sha1',$request->input('old_password'));
         $sub = '';
         $passdb = AdminRepos::getAdminById($id_a); //array
         foreach($passdb as $cat)
@@ -107,7 +107,7 @@ class AdminControllerWithRepos extends Controller
 //            $request->user()->fill([
 //             'password' => Hash::make($request->newPassword)
 //            'password' => Hash::make($request->input('password'))
-                    'password' =>  hash('sha256', $request->input('new_password')),
+                    'password' =>  hash('sha1', $request->input('new_password')),
 
 
 
@@ -126,8 +126,8 @@ class AdminControllerWithRepos extends Controller
         {
             return redirect()
                 ->action('AdminControllerWithRepos@index')
-              //  ->withErrors(['msg' => 'Cannot update admin with ID: '.$id_a.'!'])
-                ->withErrors(['msg' => 'Giải mã đi các cháu ^^: '.$sub]);
+                ->withErrors(['msg' => 'Cannot update admin with ID: '.$id_a.'!']);
+              //  ->withErrors(['msg' => 'Giải mã đi các cháu ^^: '.$sub]);
         }
 
 

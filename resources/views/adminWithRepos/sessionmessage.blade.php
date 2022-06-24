@@ -7,7 +7,7 @@
     </button>
   </div>
 @endif
-@if(count($errors->all())))
+@if(count($errors->all()))
   {{--  https://getbootstrap.com/docs/4.6/components/alerts/#dismissing--}}
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
 {{--    <ul>
