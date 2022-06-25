@@ -414,7 +414,7 @@
       <div class="card">
         <img class="card-img-top" width="60px" src="{{asset('images/images/nha1.jpg')}}" alt="Card image cap">
         <div class="card-body">
-          <div class="heading_container">
+          <div class="heading_container" style="font-family: Cursive">
             Low Knitting Basket
           </div>
           <p class="card-text"></p>
@@ -424,7 +424,7 @@
       <div class="card">
         <img class="card-img-top" width="60px" src="{{asset('images/images/rohoa1.jpg')}}" alt="Card image cap">
         <div class="card-body">
-          <div class="heading_container">
+          <div class="heading_container" style="font-family: Cursive">
             Low Knitting Basket
           </div>
 
@@ -435,7 +435,7 @@
       <div class="card">
         <img class="card-img-top" width="60px" src="{{asset('images/images/nha.jpg')}}" alt="Card image cap">
         <div class="card-body">
-          <div class="heading_container">
+          <div class="heading_container" style="font-family: Cursive">
             Warm House
           </div>
           <p class="card-text"></p>

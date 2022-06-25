@@ -55,7 +55,7 @@ class HandicraftControllerWithRepos extends Controller
                 'id_p' => '',
                 'name_p' => '',
                 'image_p' => '',
-                'price_p' => 0,
+                'price_p' => '',
                 'size_p' => '',
                 'description_p' => '',
                 'id_cate' => ''
@@ -166,9 +166,13 @@ class HandicraftControllerWithRepos extends Controller
             $request->all(),
             [
                 'image_p' =>['required'],
+                'name_p'=>['required','regex:/^[^0-9][A-Za-z]*$/'],
+                'price_p'=>['required'],
             ],
             [
                 'image_p.required' => 'please enter image',
+                'name_p'=>'you are not allowed to input numbers or special characters!',
+                'price.required'=>'please enter price',
 
             ]
         );

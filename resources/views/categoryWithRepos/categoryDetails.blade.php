@@ -21,7 +21,7 @@
 {{--  <dt class="col-sm-3">id</dt>--}}
 {{--  <dd class="col-sm-9">{{ $category->id_cate }}</dd>--}}
 
-  <dt class="col-sm-3">name</dt>
+  <dt class="col-sm-3">Name</dt>
   <dd class="col-sm-9">{{ $category->name_cate }}</dd>
 
 

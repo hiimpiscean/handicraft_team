@@ -41,9 +41,4 @@
   <input type="password" class="form-control" id="password" name="password" value="">
 </div>
 
-  <div class="form-group">
-    <label for="confirm_password" class="font-weight-bold">Confirm password</label>
-    <input type="password" class="form-control" id="confirm_password" name="confirm_password" value="">
-  </div>
-
 </div>

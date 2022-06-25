@@ -11,8 +11,8 @@
 
   }
   .img{
-    width: 35%;
-    height: 20%;
+    max-width: 350px;
+    max-height: 350px;
   }
 </style>
 
@@ -26,7 +26,7 @@
 </div>
 <div class="form-group">
   <label for="image_p" class="font-weight-bold">Image</label>
-  <img class="col-sm-9 img" src="{{asset('images/handicraf/'. $product->image_p)}}" width="70" height="400"  alt="" >
+  <img class="col-sm-9 img" src="{{asset('images/handicraf/'. $product->image_p)}}"   alt="" >
 </div>
 <div class="form-group">
   <label for="image_p" class="font-weight-bold"> Change Image</label>

@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
 
@@ -29,7 +31,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="publisherDropdown">
             <a class="dropdown-item" href="{{route('admin.index')}}">View All</a>
-            <a class="dropdown-item" href="{{route('admin.create')}}">New Admin</a>
+{{--            <a class="dropdown-item" href="{{route('admin.create')}}">New Admin</a>--}}
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -54,11 +56,11 @@
         </li>
 
 
-        <li class="nav-item dropdown">
-          <a class="nav-link "
-             href="{{route('customer.create')}}"
-          >New customer</a>
-        </li>
+{{--        <li class="nav-item dropdown">--}}
+{{--          <a class="nav-link "--}}
+{{--             href="{{route('customer.create')}}"--}}
+{{--          >New customer</a>--}}
+{{--        </li>--}}
 
 
       </ul>

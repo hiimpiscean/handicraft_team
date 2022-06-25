@@ -24,6 +24,15 @@ class CategoryShowRepos
         return DB::select($sql, [$id_cate]);
     }
 
+    public static function getCategoryWithProductsById($id_cate){
+        $sql = 'select p.* ';
+        $sql .= 'from product as p ';
+        $sql .= 'join category as c on p.categoryId = c.id_cate ';
+        $sql .= 'where c.id_cate = ? ';
+
+        return DB::select($sql, [$id_cate]);
+    }
+
     public static function insert($category){
         $sql = 'insert into category ';
         $sql .= '(name_cate, image_cate) ';

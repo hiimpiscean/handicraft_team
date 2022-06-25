@@ -6,6 +6,10 @@
     width: 85%;
 
   }
+  img{
+    max-width: 400px;
+    max-height: 400px;
+  }
 </style>
 
 
@@ -15,7 +19,7 @@
   <dd class="col-sm-9">{{ $product->name_p }}</dd>
 
   <dt class="col-sm-3">Image</dt>
-<dd class="col-sm-9" >  <img class="col-sm-9 " src="{{asset('images/handicraf/'. $product->image_p)}}" width="100" height="340" alt="" >
+<dd class="col-sm-9" >  <img src="{{asset('images/handicraf/'. $product->image_p)}}"  alt="" >
 </dd>
   <dt class="col-sm-3">Price</dt>
   <dd class="col-sm-9">{{$product->price_p }}</dd>

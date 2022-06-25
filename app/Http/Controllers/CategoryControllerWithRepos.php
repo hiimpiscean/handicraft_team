@@ -118,13 +118,17 @@ class CategoryControllerWithRepos extends Controller
 
             return redirect()->action('CategoryControllerWithRepos@index');
         }
-        $product = CategoryShowRepos::getCategoryById($id_cate);
+        $product = CategoryShowRepos::getCategoryWithProductsById($id_cate);
 
 //        CategoryShowRepos::delete($id_cate);
-
+/*        $tmp = 0;
+        foreach($product as $p)
+        {
+            $tmp++;
+        }*/
         if (count($product) > 0) {
             return redirect()->action('CategoryControllerWithRepos@index')
-                ->with('msg', 'Can not delete!!! Please check animals before delete category!!!');
+                ->with('msg', 'Can not delete!!! Please check products before delete category!!!');
         } else {
             CategoryShowRepos::delete($id_cate);
             return redirect()->action('CategoryControllerWithRepos@index')
@@ -144,12 +148,14 @@ class CategoryControllerWithRepos extends Controller
         return Validator::make(
             $request->all(),
             [
-                'name_cate'=>['required'],
+//                'name_cate'=>['required','regex:/^([^0-9]*)$/'],
+                'name_cate'=>['required','regex:/^[^0-9][A-Za-z]*$/'],
                 'image_cate' =>['required'],
             ],
             [
                 'name_cate.required'=>'please Enter name',
                 'image_cate.required' => 'please enter image',
+                'name_cate.regex'=>'you are not allowed to input numbers or special characters!',
             ]
         );
     }
