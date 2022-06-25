@@ -86,9 +86,13 @@
 
 <main class="login-form">
   <div class="cotainer">
+
     <div class="row justify-content-center">
+
       <div class="col-md-8">
+        @include('partials.errors')
         <div class="card">
+
           <div class="card-header">Login</div>
           <div class="card-body">
             <form action="{{route('authHan.signin')}}" method="post">
