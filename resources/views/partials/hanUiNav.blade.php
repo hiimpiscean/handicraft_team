@@ -111,7 +111,6 @@
             <input class="form-control-sm" id="query" name="query" type="text" placeholder="Search" aria-label="Search">
           </div>
           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </form>
