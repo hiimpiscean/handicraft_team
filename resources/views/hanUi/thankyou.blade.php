@@ -5,7 +5,7 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>404 Not Found</title>
+  <title>Under construction</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -417,9 +417,10 @@
 <div class="star star5"></div>
 
 <div class="error">
-  <div class="error__title">404</div>
-  <div class="error__subtitle">Meow, meow...</div>
-  <div class="error__description">Well, it looks like you have reached the end of the journey!</div>
+  <div class="error__title">^pis^</div>
+  <div class="error__subtitle">Under construction...</div>
+  <div class="error__description">Meow, meow...</div>
+  <div class="error__description">It looks like you have reached the end of the journey!</div>
   <div class="error__description">Please come back later!</div>
   <button class="error__button error__button--active" ><a href="{{route('hanUi.index')}}" class="text-light">GO BACK</a></button>
 {{--  <button class="error__button">CONTACT</button>--}}
