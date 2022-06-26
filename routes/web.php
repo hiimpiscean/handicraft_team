@@ -541,6 +541,9 @@ Route::group(['prefix' => 'hanUi'], function () {
         'uses' => 'HanController@search',
         'as' => 'hanUi.search'
     ]);
+    Route::get('successtest',function(){
+        return view('hanUi.success');
+    })->name('hanUi.success');
 
 });
 ////////////////Login Admin Handicraft////////////////////////////////////

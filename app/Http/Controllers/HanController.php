@@ -133,9 +133,9 @@ class HanController extends Controller
 
         $newId = CustomerRepos::insert($customer);
 
-        return redirect()
-            ->action('HanController@index')
-            ->with('msg', 'New Customer with id: '.$newId.' has been inserted');
+        return view('hanUi.success');/*
+            ->action('HanController@success')
+            ->with('msg', 'New Customer with id: '.$newId.' has been inserted');*/
     }
 
     public function getproductsfromcate($id)
