@@ -22,7 +22,7 @@
   <p class="lead"><strong>See you back later!</strong></p>
   <hr>
   <p class="lead">
-    <a class="btn btn-primary btn-sm" href="{{route('hanUi.home')}}" role="button">Continue to homepage</a>
+    <a class="btn btn-primary btn-sm" href="{{route('hanUi.index')}}" role="button">Continue to homepage</a>
   </p>
 </div>
 </body>

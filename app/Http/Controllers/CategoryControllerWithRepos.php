@@ -89,18 +89,6 @@ class CategoryControllerWithRepos extends Controller
         return redirect()->action('CategoryControllerWithRepos@index')
             ->with('msg', 'Update Successfully');;
     }
-////    //        CategoryRepos::delete($id);
-//        $product = CategoryRepos::getCategoriesById($id);
-//
-//        if (count($product) > 0) {
-//            return redirect()->action('CategoryControllerWithRepos@index')
-//                ->with('msg', 'Can not delete!!! Please check animals before delete category!!!');
-//        } else {
-//            CategoryRepos::delete($id);
-//            return redirect()->action('CategoryControllerWithRepos@index')
-//                ->with('msg', 'Delete Successfully');
-//        }
-//
 
     public function confirm($id_cate){
         $category = CategoryShowRepos::getCategoryById($id_cate); //this is always an array

@@ -12,6 +12,7 @@ class ManualAuthHanController extends Controller
     public function ask(){
         return view('handicraftWithRepos.manualAuthHan.login');
     }
+
     public function signin(Request $request){
        $this->formValidateLogin($request)->validate();
         $informations = adminRepos::getAllAdmin();
@@ -32,12 +33,14 @@ class ManualAuthHanController extends Controller
             return redirect()->action('ManualAuthHanController@ask');
         }
     }
+
     public function signout() {
         if(Session::has('username')){
             Session::forget('username');
         }
         return redirect()->action('ManualAuthHanController@ask');
     }
+
     private function formValidateLogin($request) {
         return Validator::make(
             $request->all(),
@@ -81,7 +84,4 @@ class ManualAuthHanController extends Controller
             ]
         );
     }
-
-
-
 }

@@ -13,7 +13,6 @@ class HandicraftControllerWithRepos extends Controller
     // trong thu mục Repository sẽ chứa tất cả các thư mục Repos
     // ta ko lấy từ session nữa mà ta lấy ở database
 
-
     /////////////////////////////////
     public function index()
     {
@@ -26,6 +25,7 @@ class HandicraftControllerWithRepos extends Controller
 
             ]);
     }
+
     public function show($id_p)
     {
 
@@ -88,8 +88,6 @@ class HandicraftControllerWithRepos extends Controller
             ->with('msg', 'New Product with id: '.$newId.' has been inserted');
 
     }
-
-
 
     public function edit($id_p)
     {
@@ -171,7 +169,8 @@ class HandicraftControllerWithRepos extends Controller
             ],
             [
                 'image_p.required' => 'please enter image',
-                'name_p'=>'you are not allowed to input numbers or special characters!',
+                'name_p.required' => 'please enter name!',
+                'name_p.regex'=>'you are not allowed to input numbers or special characters!',
                 'price.required'=>'please enter price',
 
             ]

@@ -13,7 +13,7 @@
 
 <div class="container bacColor">
   <nav class="navbar navbar-expand-lg custom_nav-container ">
-    <a class="navbar-brand" href="{{route('hanUi.home')}}" style="color: white " >
+    <a class="navbar-brand" href="{{route('hanUi.index')}}" style="color: white " >
       <img src="{{asset('images/handicraf/logo1.png')}}" width=35" height="40" class="d-inline-block align-top" alt="">
 
       <span>Handicraft Shop
@@ -28,11 +28,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav  mx-auto ">
         <li class="nav-item font">
-          <a class="nav-link " href="{{route('hanUi.home')}}">Home
+          <a class="nav-link " href="{{route('hanUi.index')}}">Home
             <span class="sr-only"></span></a>
         </li>
         <li class="nav-item font">
-          <a class="nav-link" href  ="{{route('hanUi.index')}}">Products</a>
+          <a class="nav-link" href  ="{{route('hanUi.home')}}">Products</a>
         </li>
         <li class="nav-item font">
 {{--          <a class="nav-link" href="{{route('hanUi.customer')}}">Customer</a>--}}

@@ -22,7 +22,7 @@ class AdminRepos
         return DB::select($sql, [$id_a]);
     }
 
-    public static function insert($admin){
+/*    public static function insert($admin){
         $sql = 'insert into admin ';
         $sql .= '(username, fullName_a, phone_a, email_a, password) ';
         $sql .= 'values (?, ?, ?, ?, ?) ';
@@ -39,7 +39,7 @@ class AdminRepos
         } else {
             return -1;
         }
-    }
+    }*/
 
     public static function update($admin){
         $sql = 'update admin ';
@@ -59,12 +59,12 @@ class AdminRepos
 
 
 
-    public static function delete($id_a){
+/*    public static function delete($id_a){
         $sql = 'delete from admin ';
         $sql .= 'where id_a = ? ';
 
         DB::delete($sql, [$id_a]);
-    }
+    }*/
 
 
 

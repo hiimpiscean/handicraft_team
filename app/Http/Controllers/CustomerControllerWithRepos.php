@@ -16,6 +16,7 @@ class CustomerControllerWithRepos extends Controller
                 'customer' => $customer,
             ]);
     }
+
     public function show($id_c)
     {
 
@@ -27,46 +28,6 @@ class CustomerControllerWithRepos extends Controller
         );
     }
 
-    public function create()
-    {
-
-        return view(
-            'customerWithRepos.new',
-            ["customer" => (object)[
-                'id_c' => '',
-                'fullName_c' => '',
-                'dob' => '',
-                'gender'=>'',
-                'phone_c' => '',
-                'email_c' => '',
-                'address_c' => ''
-
-
-            ]]);
-
-    }
-
-    public function store(Request $request)
-    {
-        dd($request->all());
-        $this->formValidate($request)->validate(); //shortcut
-
-        $customer = (object)[
-            'fullName_c' => $request->input('fullName_c'),
-            'dob' => $request->input('dob'),
-            'gender' => $request->input('gender'),
-            'phone_c' => $request->input('phone_c'),
-            'email_c' => $request->input('email_c'),
-            'address_c' => $request->input('address_c'),
-        ];
-
-        $newId = CustomerRepos::insert($customer);
-
-        return redirect()
-            ->action('HanController@index')
-            ->with('msg', 'New Customer with id: '.$newId.' has been inserted');
-    }
-
     public function edit($id_c)
     {
         $customer = CustomerRepos::getCustomerById($id_c); //this is always an array
@@ -76,7 +37,6 @@ class CustomerControllerWithRepos extends Controller
             'customerWithRepos.update',
             ["customer" => $customer[0]]);
     }
-
 
     public function update(Request $request, $id_c)
     {
@@ -101,7 +61,6 @@ class CustomerControllerWithRepos extends Controller
         return redirect()->action('CustomerControllerWithRepos@index')
             ->with('msg', 'Update Successfully');;
     }
-
 
     public function confirm($id_c){
         $customer = CustomerRepos::getCustomerById($id_c); //this is always an array
@@ -155,6 +114,5 @@ class CustomerControllerWithRepos extends Controller
 
         );
     }
-
 
 }
