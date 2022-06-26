@@ -171,7 +171,8 @@ class HandicraftControllerWithRepos extends Controller
             ],
             [
                 'image_p.required' => 'please enter image',
-                'name_p'=>'you are not allowed to input numbers or special characters!',
+                'name_p.required' => 'please enter name!',
+                'name_p.regex'=>'you are not allowed to input numbers or special characters!',
                 'price.required'=>'please enter price',
 
             ]
