@@ -481,10 +481,16 @@ Route::group(['prefix' => 'hanUi'], function () {
         'as' => 'hanUi.index'
     ]);
 // home
-    Route::get('home',function(){
-       return view('hanUi.home') ;
+//    Route::get('home',function(){
+//       return view('hanUi.home');
+//    })->name('hanUi.home');
 
-    })->name('hanUi.home');
+    Route::get('home',[
+        'uses' => 'HanController@home',
+        'as' => 'hanUi.home'
+    ]);
+
+
     Route::get('category/{id_cate}',[
         'uses' => 'HanController@getproductsfromcate',
         'as' => 'hanUi.showproducts'
@@ -541,6 +547,11 @@ Route::group(['prefix' => 'hanUi'], function () {
         'uses' => 'HanController@search',
         'as' => 'hanUi.search'
     ]);
+    Route::get('thanks',[
+        'uses' => 'HanController@thank',
+        'as' => 'hanUi.thank'
+    ]);
+
 
 });
 ////////////////Login Admin Handicraft////////////////////////////////////

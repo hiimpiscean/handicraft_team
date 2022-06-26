@@ -85,7 +85,7 @@
                 <h6>
                   <span>$30</span>
                 </h6>
-                <a href="">
+                <a href="{{route('hanUi.thank')}}">
                   Buy Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                     <g>
                       <g>
@@ -154,7 +154,7 @@
                 <h6>
                   <span>$50</span>
                 </h6>
-                <a href="">
+                <a href="{{route('hanUi.thank')}}">
                   Buy Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                     <g>
                       <g>
@@ -223,7 +223,7 @@
                 <h6>
                   <span>$15</span>
                 </h6>
-                <a href="">
+                <a href="{{route('hanUi.thank')}}">
                   Buy Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                     <g>
                       <g>
@@ -292,7 +292,7 @@
                 <h6>
                   <span>$60</span>
                 </h6>
-                <a href="">
+                <a href="{{route('hanUi.thank')}}">
                   Buy Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                     <g>
                       <g>
@@ -392,7 +392,7 @@
               bronze vases and beautiful handmade wooden toys for everyone,
               everything is made with great care. In this way we can guarantee that our products are absolutely the best.
             </p>
-            <a href="#">
+            <a href="{{route('hanUi.thank')}}">
               Read More
             </a>
           </div>
@@ -457,19 +457,19 @@
               Contact Us
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="{{route('hanUi.thank')}}">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
                 </span>
               </a>
-              <a href="">
+              <a href="{{route('hanUi.thank')}}">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
                   Call +84 123456789
                 </span>
               </a>
-              <a href="">
+              <a href="{{route('hanUi.thank')}}">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   minh@gmail.com
@@ -487,19 +487,19 @@
               The brand is present worldwide with 1000 facilities and has been growing since 1972.
             </p>
             <div class="footer_social">
-              <a href="">
+              <a href="{{route('hanUi.thank')}}">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="{{route('hanUi.thank')}}">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="{{route('hanUi.thank')}}">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="{{route('hanUi.thank')}}">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="{{route('hanUi.thank')}}">
                 <i class="fa fa-pinterest" aria-hidden="true"></i>
               </a>
             </div>

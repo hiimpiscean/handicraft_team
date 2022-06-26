@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Validator;
 
 class HanController extends Controller
 {
+    public function home(){
+        return view('hanUi.home');
+    }
     public function index()
     {
 
@@ -174,7 +177,9 @@ class HanController extends Controller
             ]]);
 
     }
-
+    public function thank(){
+        return view('hanUi.thank');
+    }
 
 
     private function formValidate($request)

@@ -2,183 +2,7 @@
 
 @section('main')
 
-
-{{--  <div class="container">--}}
-{{--    <h1 class="display-4">Customer Index</h1>--}}
-{{--    @include('customerWithRepos.sessionmessage')--}}
-{{--    <table class="table table-hover">--}}
-{{--      <thead class="thead-dark">--}}
-{{--      <tr>--}}
-
-{{--        <th scope="col">FullName</th>--}}
-{{--        <th scope="col">DOB</th>--}}
-{{--        <th scope="col">Phone</th>--}}
-{{--        <th scope="col">Email</th>--}}
-{{--        <th scope="col">Address</th>--}}
-{{--        <th scope="col">&nbsp;</th>--}}
-{{--        <th scope="col">&nbsp;</th>--}}
-{{--        <th scope="col">&nbsp;</th>--}}
-{{--      </tr>--}}
-{{--      </thead>--}}
-{{--      <tbody>--}}
-{{--      @foreach($customer as $c)--}}
-{{--        <tr>--}}
-{{--          <td>{{$c->fullName_c}}</td>--}}
-{{--          <td>{{$c->dob}}</td>--}}
-{{--          <td>{{$c->phone_c}}</td>--}}
-{{--          <td>{{$c->email_c}}</td>--}}
-{{--          <td>{{$c->address_c}}</td>--}}
-{{--          <td><a type="button" class="btn btn-primary btn-sm"--}}
-{{--                 href="{{route('customer.show', ['id_c' => $c->id_c])}}"--}}
-{{--            >Details</a>--}}
-{{--          </td>--}}
-{{--          <td><a type="button" class="btn btn-success btn-sm"--}}
-{{--                 href="{{route('customer.edit', ['id_c' => $c->id_c])}}"--}}
-{{--            >Edit</a>--}}
-{{--          </td>--}}
-{{--          <td>--}}
-{{--            <a type="button" class="btn btn-danger btn-sm"--}}
-{{--               href="{{route('customer.confirm', ['id_c' => $c->id_c])}}"--}}
-{{--            >Delete</a></td>--}}
-{{--        </tr>--}}
-{{--      @endforeach--}}
-{{--      </tbody>--}}
-{{--    </table>--}}
-
-{{--  </div>--}}
-{{-- ////////////////////////////////////////////////////////////////////////// --}}
-
-{{--  <div class="container">--}}
-{{--    <h1 class="display-4">Customer Index</h1>--}}
-{{--    @include('customerWithRepos.sessionmessage')--}}
-{{--    <table class="table table-hover">--}}
-{{--      <thead class="thead-dark">--}}
-{{--      <tr>--}}
-
-{{--        <th scope="col">FullName</th>--}}
-{{--        <th scope="col">DOB</th>--}}
-{{--        <th scope="col">Phone</th>--}}
-{{--        <th scope="col">Email</th>--}}
-{{--        <th scope="col">Address</th>--}}
-{{--        <th scope="col">&nbsp;</th>--}}
-{{--        <th scope="col">&nbsp;</th>--}}
-{{--        <th scope="col">&nbsp;</th>--}}
-{{--      </tr>--}}
-{{--      </thead>--}}
-{{--      <tbody>--}}
-{{--      @foreach($customer as $c)--}}
-{{--        <tr>--}}
-{{--          <td>{{$c->fullName_c}}</td>--}}
-{{--          <td>{{$c->dob}}</td>--}}
-{{--          <td>{{$c->phone_c}}</td>--}}
-{{--          <td>{{$c->email_c}}</td>--}}
-{{--          <td>{{$c->address_c}}</td>--}}
-{{--          <td><a type="button" class="btn btn-primary btn-sm"--}}
-{{--                 href="{{route('customer.show', ['id_c' => $c->id_c])}}"--}}
-{{--            >Details</a>--}}
-{{--          </td>--}}
-{{--          <td><a type="button" class="btn btn-success btn-sm"--}}
-{{--                 href="{{route('customer.edit', ['id_c' => $c->id_c])}}"--}}
-{{--            >Edit</a>--}}
-{{--          </td>--}}
-{{--          <td>--}}
-{{--            <a type="button" class="btn btn-danger btn-sm"--}}
-{{--               href="{{route('customer.confirm', ['id_c' => $c->id_c])}}"--}}
-{{--            >Delete</a></td>--}}
-{{--        </tr>--}}
-{{--      @endforeach--}}
-{{--      </tbody>--}}
-{{--    </table>--}}
-
-{{--  </div>--}}
-
-
-{{--  ////////////////////////////////////////////////////////////////////////////////////////////--}}
-
-{{--<style>--}}
-{{--  .panel-table .panel-body {--}}
-{{--    padding: 0;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-body .table-bordered {--}}
-{{--    border-style: none;--}}
-{{--    margin: 0;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-body .table-bordered>thead>tr>th:first-of-type {--}}
-{{--    text-align: center;--}}
-{{--    width: 100px;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-body .table-bordered>thead>tr>th:last-of-type,--}}
-{{--  .panel-table .panel-body .table-bordered>tbody>tr>td:last-of-type {--}}
-{{--    border-right: 0px;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-body .table-bordered>thead>tr>th:first-of-type,--}}
-{{--  .panel-table .panel-body .table-bordered>tbody>tr>td:first-of-type {--}}
-{{--    border-left: 0px;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-body .table-bordered>tbody>tr:first-of-type>td {--}}
-{{--    border-bottom: 0px;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-body .table-bordered>thead>tr:first-of-type>th {--}}
-{{--    border-top: 0px;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-footer .pagination {--}}
-{{--    margin: 0;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-footer .col {--}}
-{{--    line-height: 34px;--}}
-{{--    height: 34px;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-heading .col h3 {--}}
-{{--    line-height: 30px;--}}
-{{--    height: 30px;--}}
-{{--  }--}}
-
-{{--  .panel-table .panel-body .table-bordered>tbody>tr>td {--}}
-{{--    line-height: 34px;--}}
-{{--  }--}}
-{{--  .center{--}}
-{{--    margin-left: 220px;--}}
-{{--    /*margin-right: 150px ;*/--}}
-{{--  }--}}
-{{--  .msg{--}}
-{{--    margin: 0 200px 0 20px ;--}}
-{{--  }--}}
-
-{{--  .cus{--}}
-{{--    /*border: solid 1px red;*/--}}
-{{--    padding-left: 280px ;--}}
-{{--    padding-bottom: 10px;--}}
-{{--    padding-top: 30px;--}}
-{{--  }--}}
-
-{{--  .boy{--}}
-{{--    margin-right: 100px;--}}
-{{--    margin-left: 215px;--}}
-{{--    /*border: solid 1px red;*/--}}
-{{--    width: 75%;--}}
-{{--  }--}}
-{{--</style>--}}
-{{--////////////////////////////////////--}}
-
 <style>
-
-  /*
-
-Product Admin CSS Template
-
-https://templatemo.com/tm-524-product-admin
-
-*/
-
   html {
     font-size: 16px;
     overflow-x: hidden;
@@ -198,40 +22,12 @@ https://templatemo.com/tm-524-product-admin
   button:focus {
     outline: 0;
   }
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-  }
-  .tm-site-icon {
-    color: #656565;
-  }
-  .tm-site-title {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #fff;
-  }
-  .navbar {
-    height: 100px;
-    background-color: #567086;
-    padding: 0;
-  }
+
+
   .navbar .container {
     position: relative;
   }
-  .tm-logout-icon {
-    font-size: 1.5em;
-  }
-  .tm-mt-big {
-    margin-top: 57px;
-  }
-  .tm-mb-big {
-    margin-bottom: 60px;
-  }
-  .tm-mt-small {
-    margin-top: 20px;
-  }
+
   .tm-block-col {
     margin-bottom: 30px;
   }
@@ -244,61 +40,14 @@ https://templatemo.com/tm-524-product-admin
     height: 100%;
     max-height: 450px;
   }
-  .tm-block-avatar,
-  .tm-block-settings {
-    max-height: none;
-  }
-  .tm-block-avatar {
-    height: auto;
-  }
-  .tm-block-h-auto {
-    min-height: 1px;
-    max-height: none;
-    height: auto;
-  }
-  .tm-block-scroll {
-    overflow-y: scroll;
-  }
-  .tm-block-overflow {
-    overflow: hidden;
-  }
-  .tm-block-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 30px;
-  }
-  .nav-link {
-    color: #fff;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 90%;
-  }
+
+
   .nav-link > i {
     margin-bottom: 10px;
     margin-right: 0;
     font-size: 1.5rem;
   }
-  .dropdown-item,
-  .nav-link {
-    padding: 15px 20px;
-  }
-  .dropdown-menu {
-    font-size: 90%;
-    color: #fff;
-    background-color: #567086;
-    border-radius: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    min-width: auto;
-  }
-  .dropdown-item {
-    color: #fff;
-    padding: 15px 30px;
-  }
+
   .navbar-nav .active > .nav-link,
   .navbar-nav .nav-link.active {
     background-color: #f5a623;
@@ -307,73 +56,19 @@ https://templatemo.com/tm-524-product-admin
   .navbar-nav .nav-link.active i {
     color: #fff;
   }
-  .dropdown-item:focus,
-  .dropdown-item:hover {
-    background-color: #567086;
-  }
+
   .navbar-nav a:hover,
   .navbar-nav a:hover i {
     color: #f5a623;
   }
-  .nav-item {
-    text-align: center;
-  }
-  .nav-item:last-child {
-    margin-right: 0;
-  }
-  .dropdown-toggle::after {
-    display: none;
-  }
-  .dropdown-menu {
-    margin-top: 0;
-    border: 0;
-  }
+
   .tm-content-row {
     justify-content: space-between;
     margin-left: -20px;
     margin-right: -20px;
   }
-  .tm-col {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 50px;
-  }
-  .tm-col-big {
-    width: 39%;
-  }
-  .tm-col-small {
-    width: 21.95%;
-  }
-  .tm-gray-circle {
-    width: 80px;
-    height: 80px;
-    background-color: #aaa;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
-  .tm-notification-items {
-    overflow-y: scroll;
-    height: 90%;
-  }
-  .tm-notification-item {
-    padding: 15px;
-    background-color: #4e657a;
-    color: #fff;
-    font-size: 95%;
-    margin-bottom: 15px;
-  }
-  .tm-notification-item:last-child {
-    margin-bottom: 0;
-  }
-  .tm-notification-link {
-    color: #f5a623;
-  }
-  .tm-text-color-secondary {
-    color: #bdcbd8;
-  }
-  .tm-small {
-    font-size: 90%;
-  }
+
+
   .table {
     background-color: #50697f;
     color: #fff;
@@ -387,91 +82,18 @@ https://templatemo.com/tm-524-product-admin
   .table thead th {
     border-bottom: 0;
   }
-  .tm-status-circle {
-    display: inline-block;
-    margin-right: 5px;
-    vertical-align: middle;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    margin-top: -3px;
-  }
-  .moving {
-    background-color: #9be64d;
-    box-shadow: 0 0 8px #9be64d, inset 0 0 8px #9be64d;
-  }
-  .pending {
-    background-color: #efc54b;
-    box-shadow: 0 0 8px #efc54b, inset 0 0 8px #efc54b;
-  }
-  .cancelled {
-    background-color: #da534f;
-    box-shadow: 0 0 8px #da534f, inset 0 0 8px #da534f;
-  }
-  .tm-avatar {
-    width: 345px;
-  }
-  .tm-avatar-container {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .tm-avatar-delete-link {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -25px;
-    margin-top: -25px;
-    z-index: 1000;
-    padding: 14px;
-    border-radius: 50%;
-    background-color: rgba(57, 78, 100, 0.7);
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    display: none;
-    transition: all 0.2s ease;
-  }
+
+
+
   .tm-avatar-container:hover .tm-avatar-delete-link {
     display: block;
   }
-  .tm-col-avatar {
-    max-width: 425px;
-    width: 37%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .tm-col-account-settings {
-    max-width: 822px;
-    width: 63%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .form-control {
-    background-color: #54657d;
-    color: #fff;
-    border: 0;
-  }
-  .form-control:focus {
-    background-color: #60738e;
-    color: #fff;
-    border-color: transparent;
-    box-shadow: 0 0 0 0.1rem rgb(180, 206, 233, 0.5);
-  }
+
   .form-group label {
     color: #fff;
     margin-bottom: 10px;
   }
-  .tm-hide-sm {
-    display: block;
-  }
-  .tm-list-group {
-    counter-reset: myOrderedListItemsCounter;
-    padding-left: 0;
-  }
+
   .tm-list-group > li {
     list-style-type: none;
     position: relative;
@@ -487,48 +109,13 @@ https://templatemo.com/tm-524-product-admin
     content: counter(myOrderedListItemsCounter) ".";
     margin-right: 0.5em;
   }
-  .tm-list {
-    padding-left: 30px;
-  }
+
   .tm-list > li {
     margin-bottom: 20px;
   }
-  .form-control {
-    padding: 19px 18px;
-    border-radius: 0;
-    height: 50px;
-  }
-  .form-group {
-    margin-bottom: 15px;
-  }
-  .btn {
-    border-radius: 0;
-    padding: 13px 28px;
-    transition: all 0.2s ease;
-    max-width: 100%;
-  }
-  .btn-small {
-    padding: 10px 24px;
-  }
-  .btn-primary {
-    color: #fff;
-    background-color: #f5a623;
-    border: 2px solid #f5a623;
-    font-size: 90%;
-    font-weight: 600;
-  }
-  .btn-primary:active,
-  .btn-primary:hover {
-    color: #f5a623;
-    background-color: transparent;
-    border: 2px solid #f5a623;
-  }
-  .custom-file-input {
-    cursor: pointer;
-  }
-  .custom-file-label {
-    border-radius: 0;
-  }
+
+
+
   .table td,
   .table th {
     border-top: 1px solid #415a70;
@@ -549,12 +136,7 @@ https://templatemo.com/tm-524-product-admin
   .tm-bg-primary-dark {
     background-color: #435c70;
   }
-  .tm-bg-gray {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-  .tm-table-mt {
-    margin-top: 66px;
-  }
+
   .page-item:first-child .page-link {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -563,19 +145,7 @@ https://templatemo.com/tm-524-product-admin
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .page-link {
-    padding: 12px 18px;
-  }
-  .page-link,
-  .page-link:hover {
-    color: #000;
-  }
-  .page-item {
-    margin-right: 18px;
-  }
-  .page-item:last-child {
-    margin-right: 0;
-  }
+
   .page-item.active .page-link {
     background-color: #e9ecef;
     border-color: #dee2e6;
@@ -607,11 +177,7 @@ https://templatemo.com/tm-524-product-admin
 
 
   }
-  .tm-block-product-categories {
-    min-height: 650px;
-    margin-top: 60px;
 
-  }
   .tm-product-table-container {
     max-height: 465px;
     margin-bottom: 15px;
@@ -620,14 +186,7 @@ https://templatemo.com/tm-524-product-admin
   .tm-product-table tr {
     font-weight: 600;
   }
-  .tm-product-name {
-    font-size: 0.95rem;
-    font-weight: 600;
-  }
-  .tm-product-delete-icon {
-    font-size: 1.1rem;
-    color: #fff;
-  }
+
   .tm-product-delete-link {
     padding: 10px;
     border-radius: 50%;
@@ -640,59 +199,9 @@ https://templatemo.com/tm-524-product-admin
   .tm-product-delete-link:hover .tm-product-delete-icon {
     color: #6d8ca6;
   }
-  .custom-select {
-    width: 100%;
-    border: none;
-    color: #acc6de;
-    height: 50px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
-    padding: 15px;
 
-  }
-  .custom-select:focus {
-    outline: 0;
-  }
-  .tm-trash-icon {
-    color: #6e6c6c;
-    cursor: pointer;
-  }
-  .tm-trash-icon:hover {
-    color: #9f1321;
-  }
-  .tm-footer {
-    background-color: #567086;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    -webkit-box-shadow: 0 -3px 5px 0 rgba(69, 92, 113, 0.59);
-    -moz-box-shadow: 0 -3px 5px 0 rgba(69, 92, 113, 0.59);
-    box-shadow: 0 -3px 5px 0 rgba(69, 92, 113, 0.59);
-  }
-  .custom-select {
-    height: 50px;
-    border-radius: 0;
-  }
-  .tm-product-img-dummy {
-    max-width: 100%;
-    height: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background: #aaa;
-  }
-  .tm-product-img-edit {
-    max-width: 100%;
-    position: relative;
-  }
+
+
   .tm-product-img-edit i {
     display: none;
     position: absolute;
@@ -700,32 +209,9 @@ https://templatemo.com/tm-524-product-admin
   .tm-product-img-edit:hover i {
     display: block;
   }
-  .tm-upload-icon {
-    background: #455c71;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 15px;
-    font-size: 22px;
-  }
-  .tm-login-col {
-    max-width: 470px;
-  }
-  .navbar-toggler {
-    border-color: #708da8;
-    box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 2px;
-    border-radius: 0;
-    padding: 10px 15px;
-    transition: all 0.2s ease;
-  }
-  .navbar-toggler:hover {
-    border-color: #f5a623;
-    color: #f5a623;
-  }
-  .tm-nav-icon {
-    color: #fff;
-  }
+
+
+
   .navbar-toggler:hover .tm-nav-icon {
     color: #f5a623;
   }
@@ -885,12 +371,7 @@ https://templatemo.com/tm-524-product-admin
     }
   }
 
-  .header__navbar-item{
-    margin: 0 8px;
-    position: relative;
-    min-height: 26px;
-    cursor: pointer;
-  }
+
   .header__navbar-item--has-qr .header__qr{
     position: absolute;
   }
@@ -898,22 +379,7 @@ https://templatemo.com/tm-524-product-admin
     display: block;
   }
 
-  .header__qr{
-    width: 270px;
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    top: 120%;
-    padding: 8px;
-    border-radius: 2px;
-    display: none;
-    animation: FadeOn ease-in 0.85s;
-  }
-  .header__qr-img {
-    width: 100px;
-    /*height: 100px;*/
-    z-index: 10;
-  }
+
 
 </style>
 {{--////////////////////////////////////--}}
@@ -923,14 +389,15 @@ https://templatemo.com/tm-524-product-admin
 {{--</div>--}}
 <div class="container boy">
   <h1 class="display-4 cus">Customer Index</h1>
-  <div class="msg">
+{{--  <div class="msg">--}}
 
-    @include('customerWithRepos.sessionmessage')
-  </div>
+{{--    @include('customerWithRepos.sessionmessage')--}}
+{{--  </div>--}}
 {{--  @include('customerWithRepos.sessionmessage')--}}
   <div class="container mt-5">
   <div class="row tm-content-row">
     <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
+    @include('customerWithRepos.sessionmessage')
       <div class="tm-bg-primary-dark tm-block tm-block-products">
         <div class="tm-product-table-container">
           <table class="table table-hover tm-table-small tm-product-table">

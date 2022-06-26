@@ -119,13 +119,6 @@ class CategoryControllerWithRepos extends Controller
             return redirect()->action('CategoryControllerWithRepos@index');
         }
         $product = CategoryShowRepos::getCategoryWithProductsById($id_cate);
-
-//        CategoryShowRepos::delete($id_cate);
-/*        $tmp = 0;
-        foreach($product as $p)
-        {
-            $tmp++;
-        }*/
         if (count($product) > 0) {
             return redirect()->action('CategoryControllerWithRepos@index')
                 ->with('msg', 'Can not delete!!! Please check products before delete category!!!');
@@ -134,13 +127,6 @@ class CategoryControllerWithRepos extends Controller
             return redirect()->action('CategoryControllerWithRepos@index')
                 ->with('msg', 'Delete Successfully');
         }
-
-//        CategoryShowRepos::delete($id_cate);
-//
-//
-//        return redirect()->action('CategoryControllerWithRepos@index')
-//            ->with('msg', 'Delete Successfully');
-
     }
 
     private function formValidate($request)

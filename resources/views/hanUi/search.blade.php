@@ -74,7 +74,7 @@
 
       <div class="heading_container heading_center pa">
         <h1 >
-          Your Search Query
+          Your Search Product
         </h1>
       </div>
 

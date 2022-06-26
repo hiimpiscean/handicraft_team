@@ -14,12 +14,12 @@ class ManualAuthHanController extends Controller
     }
     public function signin(Request $request){
        $this->formValidateLogin($request)->validate();
-        $adminInformations = adminRepos::getAllAdmin();
+        $informations = adminRepos::getAllAdmin();
         $username = $request->input('username');
         $password = $request->input('password');
         $a = 0;
-        foreach($adminInformations as $adminInformation){
-            if(($adminInformation->username) == $username && ($adminInformation->password) == sha1($password)) {
+        foreach($informations as $i){
+            if(($i->username) == $username && ($i->password) == sha1($password)) {
 
                 Session::put('username', $request->input('username'));
                  return redirect()->route('handicraft.index');
@@ -31,8 +31,6 @@ class ManualAuthHanController extends Controller
         if($a != 0){
             return redirect()->action('ManualAuthHanController@ask');
         }
-//        Session::put('username', $request->input('username'));
-//        return redirect()->route('handicraft.index');
     }
     public function signout() {
         if(Session::has('username')){
@@ -46,36 +44,36 @@ class ManualAuthHanController extends Controller
             [
                 'username' => ['required',
                     function($attribute,  $value, $fail) {
-                        $adminInformations = adminRepos::getAllAdmin();
-                        $loop = 0;
-                        foreach ($adminInformations as $adminInformation) {
-                            if($value == $adminInformation->username){
-                                $loop = 0;
+                        $informations = adminRepos::getAllAdmin();
+                        $a = 0;
+                        foreach ($informations as $i) {
+                            if($value == $i->username){
+                                $a = 0;
                                 break;
                             }
                             else {
-                                $loop += 1;
+                                $a += 1;
                             }
                         }
-                        if($loop != 0 ){
+                        if($a != 0 ){
                             $fail('Username is not correct');
                         }
                     }
                 ],
                 'password' => ['required',
                     function($attribute,  $value, $fail) {
-                        $adminInformations = adminRepos::getAllAdmin();
-                        $loop = 0;
-                        foreach ($adminInformations as $adminInformation) {
-                            if(sha1($value) == $adminInformation->password){
-                                $loop = 0;
+                        $informations = adminRepos::getAllAdmin();
+                        $a = 0;
+                        foreach ($informations as $i) {
+                            if(sha1($value) == $i->password){
+                                $a = 0;
                                 break;
                             }
                             else {
-                                $loop += 1;
+                                $a += 1;
                             }
                         }
-                        if($loop != 0 ){
+                        if($a != 0 ){
                             $fail('Password is not correct');
                         }
                     }
@@ -84,48 +82,6 @@ class ManualAuthHanController extends Controller
         );
     }
 
-//    private function formValidateLogin($request) {
-//        return Validator::make(
-//            $request->all(),
-//            [
-//                'username' => ['required',
-//                    function($attribute,  $value, $fail) {
-//                        $adminInformations = adminRepos::getAllAdmin();
-//                        $loop = 0;
-//                        foreach ($adminInformations as $adminInformation) {
-//                            if($value == $adminInformation->username){
-//                                $loop = 0;
-//                                break;
-//                            }
-//                            else {
-//                                $loop += 1;
-//                            }
-//                        }
-//                        if($loop != 0 ){
-//                            $fail('Username is not correct');
-//                        }
-//                    }
-//                ],
-//                'password' => ['required',
-//                    function($attribute,  $value, $fail) {
-//                        $adminInformations = adminRepos::getAllAdmin();
-//                        $loop = 0;
-//                        foreach ($adminInformations as $adminInformation) {
-//                            if(sha1($value) == $adminInformation->password){
-//                                $loop = 0;
-//                                break;
-//                            }
-//                            else {
-//                                $loop += 1;
-//                            }
-//                        }
-//                        if($loop != 0 ){
-//                            $fail('Password is not correct');
-//                        }
-//                    }
-//                ]
-//            ]
-//        );
-//    }
+
 
 }

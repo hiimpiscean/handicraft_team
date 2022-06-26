@@ -27,6 +27,8 @@
   <link href="{{asset('css/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{asset('css/css/responsive.css')}}" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
   <link rel="icon" type="image/x-icon" href="{{asset('images/handicraf/logo1.png')}}"/>
   <title>Handicraft </title>
 </head>

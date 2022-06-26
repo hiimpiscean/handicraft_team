@@ -13,20 +13,12 @@
 {{--  <link rel="stylesheet" href="{{asset('css/hanstyle.css')}}">--}}
 {{--///////////////////////////--}}
   <link rel="stylesheet" href="{{asset('mau/font.css')}}" />
-  <!-- https://fontawesome.com/ -->
   <link rel="stylesheet" href="{{'mau/bootstrap.css'}}" />
-  <!-- https://getbootstrap.com/ -->
   <link rel="stylesheet" href="{{'mau/templatemo.css'}}}">
 {{--  ////////////////////////////--}}
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-{{--  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">--}}
-{{--  <!-- https://fonts.google.com/specimen/Roboto -->--}}
-{{--  <link rel="stylesheet" href="{{asset('fontawesome.min.css')}}">--}}
-{{--  <!-- https://fontawesome.com/ -->--}}
-{{--  <link rel="stylesheet" href="{{asset('bootstrap.min.css')}}">--}}
-{{--  <!-- https://getbootstrap.com/ -->--}}
-{{--  <link rel="stylesheet" href="{{asset('templatemo-style.css')}}">--}}
+
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 
