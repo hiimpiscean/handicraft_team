@@ -78,10 +78,9 @@ Route::group(['prefix' => 'hanUi'], function () {
         'uses' => 'HanController@search',
         'as' => 'hanUi.search'
     ]);
-    Route::get('thanks',[
-        'uses' => 'HanController@thank',
-        'as' => 'hanUi.thank'
-    ]);
+    Route::get('thanks',function(){
+        return view('hanUi.thankyou');
+    })->name('hanUi.thank');
 
 
 });

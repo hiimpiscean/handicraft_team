@@ -136,10 +136,6 @@ class HanController extends Controller
             ]);
     }
 
-    public function thank(){
-        return view('hanUi.thank');
-    }
-
     private function formValidate($request)
     {
         return Validator::make(
