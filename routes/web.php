@@ -25,7 +25,7 @@ Route::get('blade', function () {
 
 Route::group(['prefix' => 'hanUi'], function () {
 
-    Route::get('home', [
+    Route::get('products', [
         'uses' => 'HanController@index',
         'as' => 'hanUi.home'
     ]);
