@@ -48,6 +48,7 @@ Route::group(['prefix' => 'hanUi'], function () {
         'uses' => 'HanController@showdetails',
         'as' => 'hanUi.details'
     ]);
+
     Route::get('show/{id_p}',[
         'uses' => 'HanController@show',
         'as' => 'hanUi.show'

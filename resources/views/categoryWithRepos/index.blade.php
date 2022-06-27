@@ -410,7 +410,7 @@
 
                        <td class=" "  >{{$c->name_cate}}</td>
 
-    <td>
+                         <td>
                         <a href="{{route('category.show', ['id_cate' =>$c->id_cate])}}">
                         <img src="{{asset('images/category/'. $c->image_cate)}}" alt="" style="width: 30%">
                       </a>
@@ -433,10 +433,8 @@
             </tbody>
           </table>
         </div>
-
       </div>
     </div>
-
   </div>
 </div>
 </div>

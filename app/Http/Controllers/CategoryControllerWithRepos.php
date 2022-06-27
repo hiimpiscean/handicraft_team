@@ -30,7 +30,6 @@ class CategoryControllerWithRepos extends Controller
 
     public function create()
     {
-
         return view(
             'categoryWithRepos.new',
             ["category" => (object)[
@@ -39,7 +38,6 @@ class CategoryControllerWithRepos extends Controller
                 'image_cate' => ''
 
             ]]);
-
     }
 
     public function store(Request $request)

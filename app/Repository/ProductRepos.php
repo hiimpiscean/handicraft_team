@@ -30,7 +30,6 @@ class ProductRepos
         $sql .= 'from product as p ';
         $sql .= 'where p.id_p = ? ';
         return DB::select($sql, [$id_p]);
-
     }
 
     public static function insert($product){

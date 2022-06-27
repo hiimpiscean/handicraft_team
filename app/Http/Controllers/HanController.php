@@ -131,7 +131,6 @@ class HanController extends Controller
         return view('hanUi.details',
             [
                 'product' => $product[0],
-
             ]);
     }
 

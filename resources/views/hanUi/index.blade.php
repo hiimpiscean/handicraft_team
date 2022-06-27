@@ -2,25 +2,27 @@
 
 @section('main')
 
-
   <style>
-    .pa{
+    .pa {
       margin-top: 50px;
     }
-    .view{
+
+    .view {
       margin-bottom: 30px;
 
     }
-    .margin{
+
+    .margin {
       margin-right: 5px;
     }
-.flexitem{
-  justify-content:flex-start;
-  flex-direction: row;
-}
+
+    .flexitem {
+      justify-content: flex-start;
+      flex-direction: row;
+    }
 
   </style>
-{{--/////////////////////////////////////////////////////////////////////--}}
+  {{--/////////////////////////////////////////////////////////////////////--}}
   <body class="sub_page">
   <section class="food_section ">
     <div class="container">
@@ -73,16 +75,16 @@
 
 
       <div class="heading_container heading_center pa">
-        <h1 >
+        <h1>
           Our Products
         </h1>
       </div>
 
       <ul class="filters_menu">
         {{--        <li class="active" data-filter="*">All</li>--}}
-        <li class="active margin" data-filter=".a" >Vase</li>
+        <li class="active margin" data-filter=".a">Vase</li>
         <li class="active margin" data-filter=".b">Basket</li>
-        <li class="active margin" data-filter=".c">House </li>
+        <li class="active margin" data-filter=".c">House</li>
         {{--        <li data-filter=".fries">Fries</li>--}}
       </ul>
       <div class="filters-content flexitem">
@@ -90,8 +92,8 @@
 
           @include('partials.productLoop')
 
-    </div>
-    </div>
+        </div>
+      </div>
       <div class="btn-box view">
         {{--<a href="">
           View More
@@ -101,7 +103,7 @@
   </section>
   </body>
 
-{{--  /////////////////////////////////////////////////////////////////////--}}
+  {{--  /////////////////////////////////////////////////////////////////////--}}
   <footer class="footer_section">
     <div class="container">
       <div class="row">

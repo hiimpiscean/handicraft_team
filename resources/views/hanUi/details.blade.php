@@ -50,7 +50,7 @@
               <img class=" polaroid" src="{{asset('images/handicraf/'. $product->image_p)}}" alt="">
             </div>
 
-            <div class="test"> {{--ok roi day--}}
+            <div class="test">
               <h3 class="my-3">Product name</h3>
               <p>{{$product->name_p}}</p>
               <h3 class="my-3">About this product</h3>
