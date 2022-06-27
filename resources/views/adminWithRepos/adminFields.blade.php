@@ -13,8 +13,6 @@
 
 <div class="boy">
 <input type="hidden" name="id_a" value="{{old('id_a')?? $admin->id_a}}">
-{{--  (do laravel ko nhận biết được giá trị rỗng )nếu inout là null thì trường hợp old id_a sẽ bị bỏ qua thì sẽ lấy ở trong admin ->id_a--}}
-
 <div class="form-group">
   <label for="username" class="font-weight-bold">User Name</label>
   <input type="text" class="form-control" id="username" name="username" value="{{old('username')?? $admin->username}}">

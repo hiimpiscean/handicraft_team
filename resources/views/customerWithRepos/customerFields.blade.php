@@ -15,7 +15,6 @@
 </style>
 
 <input type="hidden" name="id_c" value="{{old('id_c')?? $customer->id_c}}">
-
 <div class="container boy">
   <div class="p-2 pt-md-4 pb-md-3 mx-auto text-center">
   </div>
@@ -32,17 +31,10 @@
           <input type="date" class="form-control" id="dob" name="dob" value="{{old('dob')?? $customer->dob}}">
         </div>
       </div>
-
-
-
       <div class="mb-3 form-group">
         <label for="gender">Gender</label>
         <input type="text" class="form-control" id="gender" name="gender" value="{{old('gender')?? $customer->gender}}">
       </div>
-{{--//////////////////////////////////////////--}}
-
-
-{{--      ///////////////////////////////////////////////////////////////--}}
       <div class="mb-3">
         <label for="email">Email</label>
         <div class="input-group">
@@ -52,12 +44,10 @@
           <input type="text" class="form-control" id="email_c" name="email_c" value="{{old('email_c')?? $customer->email_c}}">
         </div>
       </div>
-
       <div class="mb-3 form-group">
         <label for="address">Address</label>
         <input type="text" class="form-control" id="address_c" name="address_c" value="{{old('address_c')?? $customer->address_c}}">
       </div>
-
       <div class="mb-3 form-group">
         <label for="phone_c">Phone</label>
         <input type="text" class="form-control" id="phone_c" name="phone_c" value="{{old('phone_c')?? $customer->phone_c}}">

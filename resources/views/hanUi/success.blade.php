@@ -66,10 +66,10 @@
 <section>
     <h2>Registration successful!</h2>
     <p>...You will be redirected to the homepage in 5 seconds...</p>
-    {{--<h3>The new web address for this page is <a href="http://new_site.com">http://new_site.com</a></h3>--}}
+
   <p>If you have waited more than a few seconds and you are still seeing this message, please click on <a href="{{route('hanUi.index')}}">this link</a>! Thank you.</p>
 </section>
-{{--    @if (session()->has('message'))--}}
+
 
 @endsection
 
@@ -79,16 +79,5 @@
       window.location.href = "{{route('hanUi.index')}}"
     }, 5000); // 5 second
   </script>
-{{--  <script>
-    var timeleft = 10;
-    var downloadTimer = setInterval(function(){
-      if(timeleft <= 0){
-        clearInterval(downloadTimer);
-      }
-      var test = 10 - timeleft;
-      timeleft -= 1;
-    }, 1000);
-
-  </script>--}}
 
 @endsection

@@ -25,9 +25,6 @@ class ProductRepos
         return DB::select ($sql);
 
     }
-
-
-
     public static function getProductById($id_p){
         $sql = 'select p.* ';
         $sql .= 'from product as p ';

@@ -39,7 +39,7 @@ class HanController extends Controller
     public function show($id_p)
     {
 
-        $product = ProductRepos::getProductById($id_p); //xuống lại Database lấy đúng cuốn sách có ID này
+        $product = ProductRepos::getProductById($id_p);
 
         $category = CategoryRepos::getCategoryByProductId($id_p);
 
@@ -53,6 +53,7 @@ class HanController extends Controller
         );
     }
 
+//create customer
     public function create()
     {
 
@@ -107,11 +108,9 @@ class HanController extends Controller
             'address_c' => $request->input('address_c'),
         ];
 
-        $newId = CustomerRepos::insert($customer);
+        CustomerRepos::insert($customer);
 
-        return view('hanUi.success');/*
-            ->action('HanController@success')
-            ->with('msg', 'New Customer with id: '.$newId.' has been inserted');*/
+        return view('hanUi.success');
     }
 
     public function getproductsfromcate($id)
@@ -155,8 +154,6 @@ class HanController extends Controller
                 'phone_c.digits'=>'Please enter exactly 11 numbers',
                 'email_c.required'=>'Please enter Email',
                 'email_c.email'=>'Please enter email form',
-
-
             ]
 
         );

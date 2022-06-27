@@ -1,12 +1,8 @@
 @foreach($product as $p)
             <div class="col-sm-6 col-lg-4 all ">
-              {{--        //////////////////////////--}}
-
-
               <div class="box">
                 <div>
                   <div class="img-box">
-                    {{--  ///////////////////////////// link details ///////////////////////////////////--}}
                     <a href="{{route('hanUi.details', $p->id_p)}}">
                       <img src="{{asset('images/handicraf/'. $p->image_p)}}"  alt="">
                     </a>
@@ -22,7 +18,7 @@
                       <h6>
                         ${{$p->price_p}}
                       </h6>
-                      <a href="">
+                      <a href="{{route('hanUi.thank')}}">
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -81,6 +77,4 @@
                 </div>
               </div>
             </div>
-
-
           @endforeach

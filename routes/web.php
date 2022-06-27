@@ -34,7 +34,6 @@ Route::group(['prefix' => 'hanUi'], function () {
        return view('hanUi.home');
     })->name('hanUi.index');
 
-
     Route::get('category/{id_cate}',[
         'uses' => 'HanController@getproductsfromcate',
         'as' => 'hanUi.showproducts'

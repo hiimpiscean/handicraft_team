@@ -29,7 +29,7 @@ class HandicraftControllerWithRepos extends Controller
     public function show($id_p)
     {
 
-        $product = ProductRepos::getProductById($id_p); //xuống lại Database lấy đúng cuốn sách có ID này
+        $product = ProductRepos::getProductById($id_p); //xuống lại Database lấy sản phẩm có ID này
 
         $category = CategoryRepos::getCategoryByProductId($id_p);
 

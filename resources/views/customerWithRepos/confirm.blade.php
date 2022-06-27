@@ -12,10 +12,7 @@
     .cancel{
       margin-left: 400px;
     }
-    /*.cancel{*/
-    /*  margin: 0 700px 200px ;*/
-    /*  border : solid 1px red;*/
-    /*}*/
+
     .han{
       margin-top: 50px;
       margin-bottom: 25px;

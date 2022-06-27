@@ -20,7 +20,7 @@ class CustomerControllerWithRepos extends Controller
     public function show($id_c)
     {
 
-        $customer = CustomerRepos::getCustomerById($id_c); //this is always an array of objects
+        $customer = CustomerRepos::getCustomerById($id_c);
         return view('customerWithRepos.show',
             [
                 'customer' => $customer[0] //get the first element
@@ -30,7 +30,7 @@ class CustomerControllerWithRepos extends Controller
 
     public function edit($id_c)
     {
-        $customer = CustomerRepos::getCustomerById($id_c); //this is always an array
+        $customer = CustomerRepos::getCustomerById($id_c);
 
 
         return view(
@@ -42,7 +42,7 @@ class CustomerControllerWithRepos extends Controller
     {
         if ($id_c != $request->input('id_c')) {
             //id in query string must match id in hidden input
-            return redirect()->action('BookControllerWithRepos@index');
+            return redirect()->action('CustomerControllerWithRepos@index');
         }
 
         $this->formValidate($request)->validate(); //shortcut
@@ -102,7 +102,6 @@ class CustomerControllerWithRepos extends Controller
             [
                 'fullName_c.required'=>'Please enter Full name',
                 'fullName_c.min'=>'Enter Full Name up to 5 characters',
-//                'gender.required'=>'Please enter Gender',
                 'phone_c.required'=>'Please enter Phone',
                 'phone_c.starts_with'=>'Enter a phone number starting with 0',
                 'phone_c.digits'=>'Please enter exactly 11 numbers',

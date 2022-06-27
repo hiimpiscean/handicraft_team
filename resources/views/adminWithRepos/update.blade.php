@@ -1,8 +1,6 @@
 @extends('masters.handicraftMasterwithRepos')
 
 @section('main')
-
-
   <style>
 
     .but{

@@ -9,30 +9,32 @@ use Illuminate\Support\Facades\Validator;
 
 class ManualAuthHanController extends Controller
 {
-    public function ask(){
+    public function ask()
+    {
         return view('handicraftWithRepos.manualAuthHan.login');
     }
 
-    public function signin(Request $request){
-       $this->formValidateLogin($request)->validate();
+    public function signin(Request $request)
+    {
+        $this->formValidateLogin($request)->validate();
         $informations = adminRepos::getAllAdmin();
         $username = $request->input('username');
         $password = $request->input('password');
         $a = 0;
-        foreach($informations as $i){
-            if(($i->username) == $username && ($i->password) == sha1($password)) {
+        foreach ($informations as $i) {
+            if (($i->username) == $username && ($i->password) == sha1($password)) {
 
                 Session::put('username', $request->input('username'));
-                 return redirect()->route('handicraft.index');
-            }
-            else{
+                return redirect()->route('handicraft.index');
+            } else {
                 $a += 1;
             }
         }
-        if($a != 0){
+        if ($a != 0) {
             return redirect()->action('ManualAuthHanController@ask');
         }
     }
+
 
     public function signout() {
         if(Session::has('username')){

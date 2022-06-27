@@ -57,8 +57,6 @@ class CustomerRepos
             $customer->email_c,
             $customer->address_c,
             $customer->id_c
-
-
         ]);
 
     }

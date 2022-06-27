@@ -382,78 +382,52 @@
 
 
 </style>
-{{--////////////////////////////////////--}}
-{{--<div class="msg">--}}
-
-{{--  @include('customerWithRepos.sessionmessage')--}}
-{{--</div>--}}
-<div class="container boy">
-  <h1 class="display-4 cus">Customer Index</h1>
-{{--  <div class="msg">--}}
-
-{{--    @include('customerWithRepos.sessionmessage')--}}
-{{--  </div>--}}
-{{--  @include('customerWithRepos.sessionmessage')--}}
-  <div class="container mt-5">
-  <div class="row tm-content-row">
-    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
-    @include('customerWithRepos.sessionmessage')
-      <div class="tm-bg-primary-dark tm-block tm-block-products">
-        <div class="tm-product-table-container">
-          <table class="table table-hover tm-table-small tm-product-table">
-            <thead>
-            <tr>
-
-              <th scope="col">Full Name</th>
-              <th scope="col">DOB</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Email</th>
-              <th scope="col">Address</th>
-
-
-            </tr>
-            </thead>
-            <tbody>
-
-{{--       ///////////////////////////////////////////////////////////////////////--}}
+              <div class="container boy">
+                <h1 class="display-4 cus">Customer Index</h1>
+                <div class="container mt-5">
+                <div class="row tm-content-row">
+                  <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
+                  @include('customerWithRepos.sessionmessage')
+                    <div class="tm-bg-primary-dark tm-block tm-block-products">
+                      <div class="tm-product-table-container">
+                        <table class="table table-hover tm-table-small tm-product-table">
+                          <thead>
+                          <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">DOB</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Address</th>
+                          </tr>
+                          </thead>
+                          <tbody>
         @foreach($customer as $c)
                    <tr>
+                      <td class=" "  >{{$c->fullName_c}}</td>
+                      <td class=" "  >{{$c->dob}}</td>
+                      <td class=" "  >{{$c->gender}}</td>
+                      <td class=" ">{{$c->phone_c}}</td>
+                      <td class=" "  >{{$c->email_c}}</td>
+                      <td class=" "  >{{$c->address_c}}</td>
+                      <td class="but"><a type="button" class="tm-product-delete-link "
+                                         href="{{route('customer.show', ['id_c' => $c->id_c])}}"
+                        ><i class="bi bi-eye"></i></a>
+                      </td>
+                      <td  class="but" ><a type="button" class="tm-product-delete-link "
+                                           href="{{route('customer.edit', ['id_c' => $c->id_c])}}"
+                        ><i class="bi bi-plus-square"></i></a>
+                      </td>
+                      <td class="but">
 
-  <td class=" "  >{{$c->fullName_c}}</td>
-  <td class=" "  >{{$c->dob}}</td>
-  <td class=" "  >{{$c->gender}}</td>
-  <td class=" ">{{$c->phone_c}}</td>
-  <td class=" "  >{{$c->email_c}}</td>
-  <td class=" "  >{{$c->address_c}}</td>
-  <td class="but"><a type="button" class="tm-product-delete-link "
-                     href="{{route('customer.show', ['id_c' => $c->id_c])}}"
-    ><i class="bi bi-eye"></i></a>
-  </td>
-  <td  class="but" ><a type="button" class="tm-product-delete-link "
-                       href="{{route('customer.edit', ['id_c' => $c->id_c])}}"
-    ><i class="bi bi-plus-square"></i></a>
-  </td>
-  <td class="but">
-
-    <a type="button" class="tm-product-delete-link"
-       href="{{route('customer.confirm', ['id_c' => $c->id_c])}}"
-    ><i class="bi bi-trash3-fill"></i></a></td>
-</tr>
+                        <a type="button" class="tm-product-delete-link"
+                           href="{{route('customer.confirm', ['id_c' => $c->id_c])}}"
+                        ><i class="bi bi-trash3-fill"></i></a></td>
+                    </tr>
                   @endforeach
-
-
-
             </tbody>
           </table>
         </div>
-        <!-- table container -->
-{{--        <a--}}
-{{--          href="add-product.html"--}}
-{{--          class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>--}}
-{{--        <button class="btn btn-primary btn-block text-uppercase">--}}
-{{--          Delete selected products--}}
-{{--        </button>--}}
       </div>
     </div>
 
@@ -467,25 +441,3 @@
 
 @section('script')
 @endsection
-{{--<tr>--}}
-
-{{--  <td class=" "  >{{$c->fullName_c}}</td>--}}
-{{--  <td class=" "  >{{$c->dob}}</td>--}}
-{{--  <td class=" "  >{{$c->gender}}</td>--}}
-{{--  <td class=" ">{{$c->phone_c}}</td>--}}
-{{--  <td class=" "  >{{$c->email_c}}</td>--}}
-{{--  <td class=" "  >{{$c->address_c}}</td>--}}
-{{--  <td class="but"><a type="button" class="tm-product-delete-link "--}}
-{{--                     href="{{route('customer.show', ['id_c' => $c->id_c])}}"--}}
-{{--    ><i class="bi bi-eye"></i></a>--}}
-{{--  </td>--}}
-{{--  <td  class="but" ><a type="button" class="tm-product-delete-link "--}}
-{{--                       href="{{route('customer.edit', ['id_c' => $c->id_c])}}"--}}
-{{--    ><i class="bi bi-plus-square"></i></a>--}}
-{{--  </td>--}}
-{{--  <td class="but">--}}
-
-{{--    <a type="button" class="tm-product-delete-link"--}}
-{{--       href="{{route('customer.confirm', ['id_c' => $c->id_c])}}"--}}
-{{--    ><i class="bi bi-trash3-fill"></i></a></td>--}}
-{{--</tr>--}}

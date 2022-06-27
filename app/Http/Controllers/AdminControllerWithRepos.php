@@ -64,16 +64,7 @@ class AdminControllerWithRepos extends Controller
                 'fullName_a' => $request->input('fullName_a'),
                 'phone_a' => $request->input('phone_a'),
                 'email_a' => $request->input('email_a'),
-//            'password' => $request->input('password'),
-//            $request->user()->fill([
-//             'password' => Hash::make($request->newPassword)
-//            'password' => Hash::make($request->input('password'))
                 'password' =>  hash('sha1', $request->input('new_password')),
-
-
-
-
-
 
             ];
 
@@ -88,7 +79,7 @@ class AdminControllerWithRepos extends Controller
             return redirect()
                 ->action('AdminControllerWithRepos@index')
                 ->withErrors(['msg' => 'Cannot update admin with ID: '.$id_a.'!']);
-            //  ->withErrors(['msg' => 'Giải mã đi các cháu ^^: '.$sub]);
+
         }
 
 
@@ -111,8 +102,7 @@ class AdminControllerWithRepos extends Controller
 
             ],
             [
-//                //change validation message
-//                'title.starts_with' => 'Title must start with letter a'
+
                 'fullName_a.required' => 'Please enter Full Name',
                 'phone_a.required' => 'Please enter Phone',
                 'email_a.required' => 'Please enter Email',
