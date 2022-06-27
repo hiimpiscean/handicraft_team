@@ -79,11 +79,9 @@
       </div>
 
       <ul class="filters_menu">
-        {{--        <li class="active" data-filter="*">All</li>--}}
-        <li class="active margin" data-filter=".a" >Vase</li>
+        <li class="active margin" data-filter=".a">Vase</li>
         <li class="active margin" data-filter=".b">Basket</li>
         <li class="active margin" data-filter=".c">House </li>
-        {{--        <li data-filter=".fries">Fries</li>--}}
       </ul>
       <div class="filters-content flexitem">
         <div class="row grid">
@@ -93,9 +91,6 @@
     </div>
     </div>
       <div class="btn-box view">
-        {{--<a href="">
-          View More
-        </a>--}}
       </div>
     </div>
   </section>

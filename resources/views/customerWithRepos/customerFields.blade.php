@@ -7,7 +7,6 @@
     margin-right: 100px;
     margin-left: 90px;
     margin-top: 50px;
-    /*border: solid 1px red;*/
     width: 85%;
 
   }

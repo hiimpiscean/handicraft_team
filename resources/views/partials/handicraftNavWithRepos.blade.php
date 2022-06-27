@@ -30,7 +30,6 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="publisherDropdown">
             <a class="dropdown-item" href="{{route('admin.index')}}">View All</a>
-{{--            <a class="dropdown-item" href="{{route('admin.create')}}">New Admin</a>--}}
           </div>
         </li>
         <li class="nav-item dropdown">

@@ -5,7 +5,6 @@
     margin-right: 100px;
     margin-left: 150px;
     margin-top: 10px;
-    /*border: solid 1px red;*/
 
     width: 85%;
 
@@ -18,8 +17,6 @@
   <div class="boy">
 
 <dl class="row">
-{{--  <dt class="col-sm-3">id</dt>--}}
-{{--  <dd class="col-sm-9">{{ $category->id_cate }}</dd>--}}
 
   <dt class="col-sm-3">Name</dt>
   <dd class="col-sm-9">{{ $category->name_cate }}</dd>

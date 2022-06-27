@@ -6,7 +6,6 @@
 
     .but{
       margin: 30px 20px 40px 280px;
-      /*border : solid 1px red;*/
 
     }
     .cancel{

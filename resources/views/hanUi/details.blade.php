@@ -37,8 +37,7 @@
 
   <div class="container ">
 
-    {{--<h1>{{$product->name_p}}
-    </h1>--}}
+
     <div class="heading_container heading_center pa" style="margin-bottom: 1rem !important; margin-top: 2rem!important">
                     <h1>
                       Product details
@@ -46,7 +45,6 @@
                   </div>
           <div class=" d-flex justify-content-center">
             <div class="polaroid my-3">
-{{--              <p class="polaroid">Wassup, dude?</p>--}}
               <img class=" polaroid" src="{{asset('images/handicraf/'. $product->image_p)}}" alt="">
             </div>
 

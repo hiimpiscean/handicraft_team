@@ -7,15 +7,6 @@ use Illuminate\Support\Facades\DB;
 class ProductRepos
 {
 
-//    public static function getAllProduct() {
-//        $sql = 'select p.* ';
-//        $sql .= 'from product as p ';
-//        $sql .= 'order by p.name_p';
-//
-//        return DB::select ($sql);
-//    }
-//
-
     public static function getAllProductWithCategory() {
         $sql = 'select p.*, c.name_cate as categoryName ';
         $sql .= 'from product as p ';
@@ -79,21 +70,5 @@ class ProductRepos
         DB::delete($sql, [$id_p]);
 
     }
-
-
-//    public static function det($id_p){
-//        $sql = 'select count(*) FROM product';
-//        $sql = 'where p.category_id = 1';
-//    }
-
-
-    //check SELECT count(*) FROM `product` p WHERE p.category_id = 1
-////    if ($count > 0) showErrorMessage(...)
-
-
-
-
-
-
 
 }

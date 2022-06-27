@@ -4,10 +4,6 @@
 {{--/////////////////////////////////////////////////--}}
 
 <style>
-/*  * {
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif ;
-  }*/
   body{
     margin: 0;
     padding:0;
@@ -301,27 +297,10 @@
           <input type="text" class="form-control" id="phone_c" name="phone_c" value="{{old('phone_c')?? $customer->phone_c}}">
           </label>
           </p>
-
-
-{{--      @csrf--}}
-{{--<div class="but">--}}
-
-{{--   <div class="btn_box">--}}
-{{--                <button type="submit" class="btn btn-dark">--}}
-{{--                  Register Now--}}
-{{--  <button type="submit"  class="signup">Sign up </button>--}}
-{{--                </button>--}}
-{{--              </div>--}}
-{{--      </div>--}}
-
-
- @csrf
+            @csrf
          <div class="but">
 
            <div class="btn_box">
-{{--                  <button type="submit" class="btn btn-dark">--}}
-{{--                    Register Now--}}
-{{--                </button>--}}
   <button type="submit"  class="signup">Sign up </button>
               </div>
             </div>

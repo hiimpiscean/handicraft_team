@@ -6,7 +6,6 @@
 
     .han{
       margin-top: 50px;
-      /*margin-bottom: 5px;*/
     }
     .cancel{
       margin-left: 800px;

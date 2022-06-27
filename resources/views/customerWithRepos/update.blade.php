@@ -6,7 +6,6 @@
 
     .but{
       margin: 30px 20px 40px 280px;
-      /*border : solid 1px red;*/
 
     }
     .cancel{
@@ -15,7 +14,6 @@
 
     .han{
       margin-top: 50px;
-      /*margin-bottom: 5px;*/
     }
   </style>
   <div class="container">

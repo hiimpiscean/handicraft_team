@@ -122,7 +122,6 @@ class CategoryControllerWithRepos extends Controller
         return Validator::make(
             $request->all(),
             [
-//                'name_cate'=>['required','regex:/^([^0-9]*)$/'],
                 'name_cate'=>['required','regex:/^[^0-9][A-Za-z]*$/'],
                 'image_cate' =>['required'],
             ],

@@ -7,19 +7,16 @@
           background: #f5d8c0;
         }
         body{
-            /*font-family: 'Noto Sans', Arial, serif;*/
             font-weight: 400;
             -webkit-font-smoothing:antialiased;
             -moz-osx-font-smoothing:grayscale;
-            /*line-height: 1.618em;*/
-            background: /*linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), */url({{asset('images/images/rohoa1.jpg')}});
+            background: url({{asset('images/images/rohoa1.jpg')}});
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
         h2{
-            /*font-family: 'Noto Sans', Arial, serif;*/
             font-weight: 700;
             font-size:40px;
             line-height: 1.618em;

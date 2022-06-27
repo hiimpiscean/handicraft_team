@@ -4,7 +4,6 @@
     margin-right: 100px;
     margin-left: 105px;
     margin-top: 35px;
-    /*border: solid 1px red;*/
 
     width: 75%;
 
