@@ -31,8 +31,13 @@
         </div>
       </div>
       <div class="mb-3 form-group">
-        <label for="gender">Gender</label>
-        <input type="text" class="form-control" id="gender" name="gender" value="{{old('gender')?? $customer->gender}}">
+        <label class="content-item">Gender
+          <select class="form-control" id="gender" name="gender" value="{{old('gender')?? $customer->gender}}">
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+          </select>
+        </label>
       </div>
       <div class="mb-3">
         <label for="email">Email</label>

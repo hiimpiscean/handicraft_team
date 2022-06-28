@@ -20,10 +20,11 @@ class AdminControllerWithRepos extends Controller
     public function show($id_a)
     {
 
-        $admin = AdminRepos::getAdminById($id_a); //this is always an array of objects
+        $admin = AdminRepos::getAdminById($id_a); //this is always an array
         return view('adminWithRepos.show',
             [
                 'admin' => $admin[0] //get the first element
+//                lấy admin đó , admin array tại vị trí 0( lấy phần tử đầu tiên
             ]
         );
     }
@@ -31,8 +32,6 @@ class AdminControllerWithRepos extends Controller
     public function edit($id_a)
     {
         $admin = AdminRepos::getAdminById($id_a); //this is always an array
-
-
         return view(
             'adminWithRepos.update',
             ["admin" => $admin[0]]);
@@ -47,7 +46,7 @@ class AdminControllerWithRepos extends Controller
 
         $old_password_input = hash('sha1',$request->input('old_password'));
         $sub = '';
-        $passwd = AdminRepos::getAdminById($id_a); //array
+        $passwd = AdminRepos::getAdminById($id_a); //this is always an array
         foreach($passwd as $cat)
         {
             $sub.=$cat->password;
@@ -55,9 +54,6 @@ class AdminControllerWithRepos extends Controller
         $this->formValidate($request)->validate();
         if ($old_password_input == $sub) //hash check,
         {
-            // $hashedPassword = newPassword;
-            // The passwords match...
-            //shortcut
             $admin = (object)[
                 'id_a' => $request->input('id_a'),
                 'username' => $request->input('username'),
@@ -65,6 +61,7 @@ class AdminControllerWithRepos extends Controller
                 'phone_a' => $request->input('phone_a'),
                 'email_a' => $request->input('email_a'),
                 'password' =>  hash('sha1', $request->input('new_password')),
+
 
             ];
 
@@ -99,6 +96,7 @@ class AdminControllerWithRepos extends Controller
                 'old_password' => ['required'],
                 'new_password' => ['required','regex:/[A-Z]$/'],
                 'confirm_password' => ['required_with:new_password','same:new_password'],
+
 
             ],
             [

@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Validator;
 
 class HandicraftControllerWithRepos extends Controller
 {
-    // phương thức with để truyền dữ liệu cho view
-    // trong thu mục Repository sẽ chứa tất cả các thư mục Repos
-    // ta ko lấy từ session nữa mà ta lấy ở database
-
-    /////////////////////////////////
     public function index()
     {
 
@@ -61,7 +56,6 @@ class HandicraftControllerWithRepos extends Controller
                 'id_cate' => ''
             ],
                 "category" => $category
-
             ]);
 
     }
@@ -166,12 +160,14 @@ class HandicraftControllerWithRepos extends Controller
                 'image_p' =>['required'],
                 'name_p'=>['required','regex:/^[^0-9][A-Za-z]*$/'],
                 'price_p'=>['required'],
+                'size_p' =>['required'],
             ],
             [
                 'image_p.required' => 'please enter image',
                 'name_p.required' => 'please enter name!',
                 'name_p.regex'=>'you are not allowed to input numbers or special characters!',
                 'price.required'=>'please enter price',
+                'size_p.required' => 'please enter size',
 
             ]
         );

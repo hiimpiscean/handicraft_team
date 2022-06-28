@@ -16,7 +16,6 @@ class FunctionRepos
             $sql = 'select p.* ';
             $sql .= 'from product as p ';
             $sql .= 'join category as c on c.id_cate = p.categoryId ';
-//        join : nối giữa hai bảng
             $sql .= 'where c.id_cate = ?';
 
             return DB::select($sql, [$id_c]);

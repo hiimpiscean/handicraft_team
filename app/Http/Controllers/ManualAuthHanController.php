@@ -20,65 +20,59 @@ class ManualAuthHanController extends Controller
         $informations = adminRepos::getAllAdmin();
         $username = $request->input('username');
         $password = $request->input('password');
-        $a = 0;
         foreach ($informations as $i) {
             if (($i->username) == $username && ($i->password) == sha1($password)) {
-
                 Session::put('username', $request->input('username'));
                 return redirect()->route('handicraft.index');
-            } else {
-                $a += 1;
             }
         }
-        if ($a != 0) {
-            return redirect()->action('ManualAuthHanController@ask');
-        }
+        return redirect()->action('ManualAuthHanController@ask');
     }
 
 
-    public function signout() {
-        if(Session::has('username')){
+    public function signout()
+    {
+        if (Session::has('username')) {
             Session::forget('username');
         }
         return redirect()->action('ManualAuthHanController@ask');
     }
 
-    private function formValidateLogin($request) {
+    private function formValidateLogin($request)
+    {
         return Validator::make(
             $request->all(),
             [
                 'username' => ['required',
-                    function($attribute,  $value, $fail) {
+                    function ($attribute, $value, $fail) {//closure
                         $informations = adminRepos::getAllAdmin();
                         $a = 0;
                         foreach ($informations as $i) {
-                            if($value == $i->username){
+                            if ($value == $i->username) {
                                 $a = 0;
                                 break;
-                            }
-                            else {
+                            } else {
                                 $a += 1;
                             }
                         }
-                        if($a != 0 ){
+                        if ($a != 0) {
                             $fail('Username is not correct');
                         }
                     }
                 ],
                 'password' => ['required',
-                    function($attribute,  $value, $fail) {
+                    function ($attribute, $value, $fail) {
                         $informations = adminRepos::getAllAdmin();
                         $a = 0;
                         foreach ($informations as $i) {
-                            if(sha1($value) == $i->password){
+                            if (sha1($value) == $i->password) {
                                 $a = 0;
                                 break;
-                            }
-                            else {
+                            } else {
                                 $a += 1;
                             }
                         }
-                        if($a != 0 ){
+                        if ($a != 0) {
                             $fail('Password is not correct');
                         }
                     }

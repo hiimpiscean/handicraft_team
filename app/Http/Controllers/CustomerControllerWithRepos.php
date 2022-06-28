@@ -93,10 +93,9 @@ class CustomerControllerWithRepos extends Controller
             [
                 'fullName_c' => ['required','min:5'],
                 'dob' => ['required','date_format:"Y-m-d"'],
-//                'gender'=>['required','regex:/^N|K/' ,'regex:/u|m|c$/'],
-//                ,'regex:nu|nam|khac'
                 'phone_c' => ['required','starts_with:0','digits:11'],
                 'email_c' => ['required','email'],
+
 
             ],
             [
